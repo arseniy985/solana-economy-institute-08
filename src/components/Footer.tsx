@@ -32,7 +32,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand */}
@@ -51,16 +51,16 @@ const Footer = () => {
               education, and strategic investments on Solana.
             </p>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
+              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer border border-gray-700">
                 <Twitter className="w-5 h-5" />
               </div>
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
+              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer border border-gray-700">
                 <Linkedin className="w-5 h-5" />
               </div>
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
+              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer border border-gray-700">
                 <Github className="w-5 h-5" />
               </div>
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
+              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer border border-gray-700">
                 <Mail className="w-5 h-5" />
               </div>
             </div>
@@ -69,11 +69,11 @@ const Footer = () => {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-semibold mb-4">{category}</h3>
+              <h3 className="font-semibold mb-4 text-white">{category}</h3>
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
                       {link}
                     </a>
                   </li>
@@ -90,9 +90,9 @@ const Footer = () => {
             © 2024 SOLANA Digital Economy Institute. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+            <a href="#" className="hover:text-purple-400 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-purple-400 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-purple-400 transition-colors">Cookie Policy</a>
           </div>
         </div>
       </div>

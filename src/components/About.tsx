@@ -27,16 +27,16 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Pioneering the Future of
-            <span className="bg-gradient-to-r from-purple-600 to-violet-700 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">
               {' '}Digital Economy
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             SIDE serves as a bridge between traditional economics and blockchain innovation, 
             fostering the development of sustainable digital business ecosystems on Solana.
           </p>
@@ -45,14 +45,14 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {features.map((feature, index) => (
             <div key={index} className="group">
-              <div className="bg-gradient-to-br from-purple-50 to-violet-50 p-6 rounded-xl border border-purple-100 hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
-                  <div className="text-purple-600">
+              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 group-hover:scale-105 backdrop-blur-sm">
+                <div className="w-12 h-12 bg-purple-900/50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-800/50 transition-colors border border-purple-700">
+                  <div className="text-purple-400">
                     {feature.icon}
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
               </div>
             </div>
           ))}
