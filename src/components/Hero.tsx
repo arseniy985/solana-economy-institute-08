@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, TrendingUp, Users, BookOpen } from 'lucide-react';
+
 const Hero = () => {
-  return <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+  return (
+    <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-900/80 to-violet-900/80 rounded-full text-purple-200 text-sm font-medium mb-6 border border-purple-600/50 backdrop-blur-sm">
@@ -19,11 +22,22 @@ const Hero = () => {
             Institute
           </h1>
           
-          <p className="max-w-3xl mx-auto mb-8 leading-relaxed text-slate-50 text-7xl">
+          <p className="max-w-3xl mx-auto mb-8 leading-relaxed text-slate-50 text-lg">
             SIDE unites analysts, economists, and IT specialists to study and introduce 
             blockchain solutions into the economy. We conduct cutting-edge research, 
             experiments, and educational programs focused on digital business innovation.
           </p>
+          
+          {/* $SIDE Token Section */}
+          <div className="mb-8 p-6 bg-gradient-to-r from-purple-900/40 via-violet-900/40 to-purple-900/40 rounded-xl border border-purple-600/30 backdrop-blur-sm max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold text-white mb-3">$SIDE Token</h2>
+            <p className="text-purple-200 mb-4">
+              Invest in the future of digital economy research and education
+            </p>
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 via-emerald-600 to-green-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105">
+              <span className="text-sm">💰 Dividends at 10M market cap</span>
+            </div>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="bg-gradient-to-r from-purple-500 via-violet-600 to-purple-700 hover:from-purple-600 hover:via-violet-700 hover:to-purple-800 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300">
@@ -63,6 +77,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
