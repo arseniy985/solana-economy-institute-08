@@ -14,12 +14,17 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            SOLANA Digital
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-violet-400 bg-clip-text text-transparent">
+              Solana
+            </span>
+            {' '}Digital
             <span className="bg-gradient-to-r from-purple-300 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
               {' '}Economy
             </span>
             <br />
-            Institute
+            <span className="bg-gradient-to-r from-violet-300 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+              Institute
+            </span>
           </h1>
           
           <p className="text-lg text-gray-200 max-w-2xl mx-auto mb-6 leading-relaxed">
@@ -27,13 +32,13 @@ const Hero = () => {
             We conduct research, experiments, and educational programs for digital innovation.
           </p>
 
-          {/* Token Section - Minimalistic */}
-          <div className="bg-gradient-to-r from-yellow-600/10 via-amber-600/10 to-orange-600/10 rounded-xl p-4 mb-8 border border-yellow-500/20 backdrop-blur-sm max-w-lg mx-auto">
+          {/* Token Section - More Prominent */}
+          <div className="bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 rounded-xl p-5 mb-8 border-2 border-yellow-400/40 backdrop-blur-sm max-w-lg mx-auto shadow-lg shadow-yellow-500/20">
             <div className="flex items-center justify-center mb-2">
-              <Coins className="w-5 h-5 text-yellow-400 mr-2" />
+              <Coins className="w-6 h-6 text-yellow-300 mr-2" />
               <h3 className="text-xl font-bold text-white">$SIDE Token</h3>
             </div>
-            <p className="text-yellow-200 text-sm">
+            <p className="text-yellow-100 text-base font-medium">
               Dividends start at $10M market cap
             </p>
           </div>
