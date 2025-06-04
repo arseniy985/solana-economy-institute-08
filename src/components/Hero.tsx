@@ -23,20 +23,16 @@ const Hero = () => {
           </h1>
           
           <p className="max-w-3xl mx-auto mb-8 leading-relaxed text-slate-50 text-lg">
-            SIDE unites analysts, economists, and IT specialists to study and introduce 
-            blockchain solutions into the economy. We conduct cutting-edge research, 
-            experiments, and educational programs focused on digital business innovation.
+            SIDE unites analysts, economists, and IT specialists to study blockchain solutions. We 
+            conduct research, experiments, and educational programs for digital innovation.
           </p>
           
           {/* $SIDE Token Section */}
           <div className="mb-8 p-6 bg-gradient-to-r from-purple-900/40 via-violet-900/40 to-purple-900/40 rounded-xl border border-purple-600/30 backdrop-blur-sm max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-white mb-3">$SIDE Token</h2>
+            <h2 className="text-2xl font-bold text-white mb-3">💰 $SIDE Token</h2>
             <p className="text-purple-200 mb-4">
-              Invest in the future of digital economy research and education
+              Dividends start at $10M market cap
             </p>
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 via-emerald-600 to-green-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105">
-              <span className="text-sm">💰 Dividends at 10M market cap</span>
-            </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -44,8 +40,8 @@ const Hero = () => {
               Explore Research
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-300 px-8 py-3 rounded-lg backdrop-blur-sm hover:border-purple-300 transition-all duration-300 bg-slate-500">
-              View Programs
+            <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-300 px-8 py-3 rounded-lg backdrop-blur-sm hover:border-purple-300 transition-all duration-300 bg-white/10 hover:bg-white/20">
+              Buy $SIDE
             </Button>
           </div>
         </div>
