@@ -28,9 +28,9 @@ const Hero = () => {
           </p>
           
           {/* $SIDE Token Section */}
-          <div className="mb-8 p-4 bg-gradient-to-r from-purple-900/40 via-violet-900/40 to-purple-900/40 rounded-lg border border-purple-600/30 backdrop-blur-sm max-w-md mx-auto">
-            <h2 className="text-lg font-bold text-white mb-1">💰 $SIDE Token</h2>
-            <p className="text-purple-200 text-sm">
+          <div className="mb-8 p-5 bg-gradient-to-r from-purple-900/50 via-violet-900/50 to-purple-900/50 rounded-xl border border-purple-600/40 backdrop-blur-sm max-w-lg mx-auto shadow-lg">
+            <h2 className="text-xl font-bold text-white mb-2">💰 $SIDE Token</h2>
+            <p className="text-amber-300 font-semibold text-base">
               Dividends start at $10M market cap
             </p>
           </div>
