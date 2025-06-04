@@ -8,18 +8,22 @@ import VentureFund from '@/components/VentureFund';
 import Contact from '@/components/Contact';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import BackgroundDecorations from '@/components/BackgroundDecorations';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-gray-950">
-      <Navigation />
-      <Hero />
-      <About />
-      <Research />
-      <Education />
-      <VentureFund />
-      <Contact />
-      <Footer />
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-gray-950 relative">
+      <BackgroundDecorations />
+      <div className="relative z-10">
+        <Navigation />
+        <Hero />
+        <About />
+        <Research />
+        <Education />
+        <VentureFund />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };
