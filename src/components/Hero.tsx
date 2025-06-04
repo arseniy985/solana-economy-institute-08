@@ -13,7 +13,7 @@ const Hero = () => {
             Leading Blockchain Research Institute
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             SOLANA Digital
             <span className="bg-gradient-to-r from-purple-300 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
               {' '}Economy
@@ -22,23 +22,19 @@ const Hero = () => {
             Institute
           </h1>
           
-          <p className="text-lg text-gray-200 max-w-3xl mx-auto mb-6 leading-relaxed">
-            SIDE unites analysts, economists, and IT specialists to study and introduce 
-            blockchain solutions into the economy. We conduct cutting-edge research, 
-            experiments, and educational programs focused on digital business innovation.
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto mb-6 leading-relaxed">
+            SIDE unites analysts, economists, and IT specialists to study blockchain solutions. 
+            We conduct research, experiments, and educational programs for digital innovation.
           </p>
 
-          {/* Token Section */}
-          <div className="bg-gradient-to-r from-purple-600/20 via-violet-600/20 to-fuchsia-600/20 rounded-2xl p-6 mb-8 border border-purple-500/30 backdrop-blur-sm">
-            <div className="flex items-center justify-center mb-3">
-              <Coins className="w-6 h-6 text-yellow-400 mr-2" />
-              <h3 className="text-2xl font-bold text-white">$SIDE Token</h3>
+          {/* Token Section - Minimalistic */}
+          <div className="bg-gradient-to-r from-yellow-600/10 via-amber-600/10 to-orange-600/10 rounded-xl p-4 mb-8 border border-yellow-500/20 backdrop-blur-sm max-w-lg mx-auto">
+            <div className="flex items-center justify-center mb-2">
+              <Coins className="w-5 h-5 text-yellow-400 mr-2" />
+              <h3 className="text-xl font-bold text-white">$SIDE Token</h3>
             </div>
-            <p className="text-purple-200 text-lg mb-2">
-              Инвестируйте в будущее цифровой экономики
-            </p>
-            <p className="text-gray-300 text-sm">
-              🎯 Дивиденды начнут выплачиваться при достижении маркет-кап 10 млн $
+            <p className="text-yellow-200 text-sm">
+              Dividends start at $10M market cap
             </p>
           </div>
           
