@@ -24,7 +24,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-0 shadow-lg bg-gradient-to-br from-gray-800/70 via-gray-700/60 to-gray-800/70 border border-gray-600/40 backdrop-blur-sm">
+          <Card className="border-0 shadow-lg bg-gradient-to-br from-slate-800/90 via-gray-800/80 to-slate-900/90 border border-purple-500/20 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-2xl text-white">Send us a Message</CardTitle>
               <CardDescription className="text-gray-200">
@@ -101,15 +101,15 @@ const Contact = () => {
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
               <div className="flex space-x-4">
-                <Button variant="outline" size="sm" className="border-purple-400/30 text-purple-300 hover:bg-purple-500/20">
+                <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
                   <Twitter className="w-4 h-4 mr-2" />
                   Twitter
                 </Button>
-                <Button variant="outline" size="sm" className="border-purple-400/30 text-purple-300 hover:bg-purple-500/20">
+                <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
                   <Linkedin className="w-4 h-4 mr-2" />
                   LinkedIn
                 </Button>
-                <Button variant="outline" size="sm" className="border-purple-400/30 text-purple-300 hover:bg-purple-500/20">
+                <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
                   <Github className="w-4 h-4 mr-2" />
                   GitHub
                 </Button>
