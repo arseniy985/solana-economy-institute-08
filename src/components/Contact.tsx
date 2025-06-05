@@ -24,37 +24,37 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-0 shadow-lg bg-gradient-to-br from-gray-900/80 via-slate-900/70 to-gray-900/90 border border-purple-500/10 backdrop-blur-sm">
+          <Card className="border-0 shadow-xl bg-gradient-to-br from-purple-900/20 via-slate-800/40 to-violet-900/20 border border-purple-400/30 backdrop-blur-md">
             <CardHeader>
-              <CardTitle className="text-2xl text-gray-100">Send us a Message</CardTitle>
-              <CardDescription className="text-gray-300">
+              <CardTitle className="text-2xl text-white">Send us a Message</CardTitle>
+              <CardDescription className="text-gray-200">
                 Whether you're interested in our research, want to collaborate, or need consulting services.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-gray-300 mb-2 block">First Name</label>
-                  <Input placeholder="John" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
+                  <label className="text-sm font-medium text-gray-200 mb-2 block">First Name</label>
+                  <Input placeholder="John" className="border-gray-600/40 focus:border-purple-400 bg-gray-800/60 text-white placeholder:text-gray-400" />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-300 mb-2 block">Last Name</label>
-                  <Input placeholder="Doe" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
+                  <label className="text-sm font-medium text-gray-200 mb-2 block">Last Name</label>
+                  <Input placeholder="Doe" className="border-gray-600/40 focus:border-purple-400 bg-gray-800/60 text-white placeholder:text-gray-400" />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-300 mb-2 block">Email</label>
-                <Input type="email" placeholder="john@example.com" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
+                <label className="text-sm font-medium text-gray-200 mb-2 block">Email</label>
+                <Input type="email" placeholder="john@example.com" className="border-gray-600/40 focus:border-purple-400 bg-gray-800/60 text-white placeholder:text-gray-400" />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-300 mb-2 block">Subject</label>
-                <Input placeholder="Research Collaboration" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
+                <label className="text-sm font-medium text-gray-200 mb-2 block">Subject</label>
+                <Input placeholder="Research Collaboration" className="border-gray-600/40 focus:border-purple-400 bg-gray-800/60 text-white placeholder:text-gray-400" />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-300 mb-2 block">Message</label>
+                <label className="text-sm font-medium text-gray-200 mb-2 block">Message</label>
                 <Textarea 
                   placeholder="Tell us about your project or inquiry..." 
-                  className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400 min-h-[120px]"
+                  className="border-gray-600/40 focus:border-purple-400 bg-gray-800/60 text-white placeholder:text-gray-400 min-h-[120px]"
                 />
               </div>
               <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800">
@@ -100,19 +100,37 @@ const Contact = () => {
 
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
-                  <Twitter className="w-4 h-4 mr-2" />
-                  Twitter
-                </Button>
-                <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </Button>
-                <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </Button>
+              <div className="space-y-3">
+                {/* First row: Twitter, Telegram, Discord */}
+                <div className="flex space-x-3">
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 hover:text-white transition-all">
+                    <Twitter className="w-4 h-4 mr-2" />
+                    Twitter
+                  </Button>
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 hover:text-white transition-all">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Telegram
+                  </Button>
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 hover:text-white transition-all">
+                    <Github className="w-4 h-4 mr-2" />
+                    Discord
+                  </Button>
+                </div>
+                {/* Second row: Partnership, Github, LinkedIn */}
+                <div className="flex space-x-3">
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 hover:text-white transition-all">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Partnership
+                  </Button>
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 hover:text-white transition-all">
+                    <Github className="w-4 h-4 mr-2" />
+                    GitHub
+                  </Button>
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 hover:text-white transition-all">
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    LinkedIn
+                  </Button>
+                </div>
               </div>
             </div>
 
