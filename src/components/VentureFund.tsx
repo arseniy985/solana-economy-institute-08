@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { TrendingUp, DollarSign, Rocket, Building } from 'lucide-react';
+import { TrendingUp, DollarSign, Rocket, Building, Send, Calendar } from 'lucide-react';
 
 const VentureFund = () => {
   const investments = [
@@ -137,19 +137,34 @@ const VentureFund = () => {
         </div>
 
         {/* Apply for Funding */}
-        <div className="bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 rounded-2xl p-8 md:p-12 text-white text-center shadow-2xl">
-          <h3 className="text-3xl font-bold mb-4">Apply for Funding</h3>
-          <p className="text-lg opacity-95 mb-6 max-w-2xl mx-auto leading-relaxed">
-            Are you building the next breakthrough blockchain solution? We're looking for 
-            innovative startups that align with our mission to advance the digital economy.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600">
-              Submit Pitch Deck
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600">
-              Schedule Meeting
-            </Button>
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/90 via-gray-800/80 to-slate-900/90 border border-purple-500/30 shadow-2xl backdrop-blur-sm">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-violet-600/10 to-fuchsia-600/20"></div>
+          <div className="relative p-8 md:p-12 text-center">
+            <div className="mb-6">
+              <h3 className="text-3xl font-bold text-white mb-4">Apply for Funding</h3>
+              <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Are you building the next breakthrough blockchain solution? We're looking for 
+                innovative startups that align with our mission to advance the digital economy.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white font-semibold px-8 py-4 shadow-lg border-0 group transition-all duration-300 hover:scale-105"
+              >
+                <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                Submit Pitch Deck
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-purple-400/50 bg-white/10 text-white hover:bg-purple-500/20 hover:border-purple-400 font-semibold px-8 py-4 backdrop-blur-sm group transition-all duration-300 hover:scale-105"
+              >
+                <Calendar className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                Schedule Meeting
+              </Button>
+            </div>
           </div>
         </div>
       </div>

@@ -4,9 +4,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Twitter, Linkedin, Github, MessageCircle, Users, Video } from 'lucide-react';
+
 const Contact = () => {
-  return <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/50 via-slate-800/50 to-gray-900/50">
+  return (
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/50 via-slate-800/50 to-gray-900/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
@@ -22,37 +24,37 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-0 shadow-lg bg-gradient-to-br from-slate-100/95 via-gray-50/90 to-slate-100/95 border border-purple-200/30 backdrop-blur-sm">
+          <Card className="border-0 shadow-2xl bg-gradient-to-br from-gray-800/90 via-slate-800/85 to-gray-900/90 border border-purple-500/30 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-2xl text-gray-800">Send us a Message</CardTitle>
-              <CardDescription className="text-gray-600">
+              <CardTitle className="text-2xl text-white">Send us a Message</CardTitle>
+              <CardDescription className="text-gray-300">
                 Whether you're interested in our research, want to collaborate, or need consulting services.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">First Name</label>
-                  <Input placeholder="John" className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500" />
+                  <label className="text-sm font-medium text-gray-200 mb-2 block">First Name</label>
+                  <Input placeholder="John" className="border-gray-600 focus:border-purple-400 bg-gray-700/50 text-white placeholder:text-gray-400" />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Last Name</label>
-                  <Input placeholder="Doe" className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500" />
+                  <label className="text-sm font-medium text-gray-200 mb-2 block">Last Name</label>
+                  <Input placeholder="Doe" className="border-gray-600 focus:border-purple-400 bg-gray-700/50 text-white placeholder:text-gray-400" />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-700 mb-2 block">Email</label>
-                <Input type="email" placeholder="john@example.com" className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500" />
+                <label className="text-sm font-medium text-gray-200 mb-2 block">Email</label>
+                <Input type="email" placeholder="john@example.com" className="border-gray-600 focus:border-purple-400 bg-gray-700/50 text-white placeholder:text-gray-400" />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-700 mb-2 block">Subject</label>
-                <Input placeholder="Research Collaboration" className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500" />
+                <label className="text-sm font-medium text-gray-200 mb-2 block">Subject</label>
+                <Input placeholder="Research Collaboration" className="border-gray-600 focus:border-purple-400 bg-gray-700/50 text-white placeholder:text-gray-400" />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-700 mb-2 block">Message</label>
-                <Textarea placeholder="Tell us about your project or inquiry..." className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500 min-h-[120px]" />
+                <label className="text-sm font-medium text-gray-200 mb-2 block">Message</label>
+                <Textarea placeholder="Tell us about your project or inquiry..." className="border-gray-600 focus:border-purple-400 bg-gray-700/50 text-white placeholder:text-gray-400 min-h-[120px]" />
               </div>
-              <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800">
+              <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white font-semibold py-3 shadow-lg">
                 Send Message
               </Button>
             </CardContent>
@@ -95,19 +97,38 @@ const Contact = () => {
 
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
-                  <Twitter className="w-4 h-4 mr-2" />
-                  Twitter
-                </Button>
-                <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </Button>
-                <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </Button>
+              <div className="space-y-3">
+                {/* Первый ряд */}
+                <div className="flex space-x-4">
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
+                    <Twitter className="w-4 h-4 mr-2" />
+                    Twitter
+                  </Button>
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Telegram
+                  </Button>
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Discord
+                  </Button>
+                </div>
+                
+                {/* Второй ряд */}
+                <div className="flex space-x-4">
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
+                    <Users className="w-4 h-4 mr-2" />
+                    Partnership
+                  </Button>
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
+                    <Video className="w-4 h-4 mr-2" />
+                    TikTok
+                  </Button>
+                  <Button variant="outline" size="sm" className="border-purple-400/50 bg-gray-800/50 text-white hover:bg-purple-500/20 hover:border-purple-400">
+                    <Github className="w-4 h-4 mr-2" />
+                    GitHub
+                  </Button>
+                </div>
               </div>
             </div>
 
@@ -122,6 +143,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;
