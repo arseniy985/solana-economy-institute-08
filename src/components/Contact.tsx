@@ -24,34 +24,34 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-0 shadow-lg bg-gradient-to-br from-slate-800/90 via-gray-800/80 to-slate-900/90 border border-purple-500/20 backdrop-blur-sm">
+          <Card className="border-0 shadow-lg bg-gradient-to-br from-gray-900/80 via-slate-900/70 to-gray-900/90 border border-purple-500/10 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-2xl text-white">Send us a Message</CardTitle>
-              <CardDescription className="text-gray-200">
+              <CardTitle className="text-2xl text-gray-100">Send us a Message</CardTitle>
+              <CardDescription className="text-gray-300">
                 Whether you're interested in our research, want to collaborate, or need consulting services.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-gray-200 mb-2 block">First Name</label>
+                  <label className="text-sm font-medium text-gray-300 mb-2 block">First Name</label>
                   <Input placeholder="John" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-200 mb-2 block">Last Name</label>
+                  <label className="text-sm font-medium text-gray-300 mb-2 block">Last Name</label>
                   <Input placeholder="Doe" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-200 mb-2 block">Email</label>
+                <label className="text-sm font-medium text-gray-300 mb-2 block">Email</label>
                 <Input type="email" placeholder="john@example.com" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-200 mb-2 block">Subject</label>
+                <label className="text-sm font-medium text-gray-300 mb-2 block">Subject</label>
                 <Input placeholder="Research Collaboration" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-200 mb-2 block">Message</label>
+                <label className="text-sm font-medium text-gray-300 mb-2 block">Message</label>
                 <Textarea 
                   placeholder="Tell us about your project or inquiry..." 
                   className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400 min-h-[120px]"
