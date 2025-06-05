@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,35 +22,35 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-0 shadow-lg bg-gradient-to-br from-gray-900/80 via-slate-900/70 to-gray-900/90 border border-purple-500/10 backdrop-blur-sm">
+          <Card className="border-0 shadow-lg bg-gradient-to-br from-slate-100/95 via-gray-50/90 to-slate-100/95 border border-purple-200/30 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-2xl text-slate-50">Send us a Message</CardTitle>
-              <CardDescription className="text-gray-300">
+              <CardTitle className="text-2xl text-gray-800">Send us a Message</CardTitle>
+              <CardDescription className="text-gray-600">
                 Whether you're interested in our research, want to collaborate, or need consulting services.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6 bg-gray-950">
+            <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-gray-300 mb-2 block">First Name</label>
-                  <Input placeholder="John" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">First Name</label>
+                  <Input placeholder="John" className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500" />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-300 mb-2 block">Last Name</label>
-                  <Input placeholder="Doe" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Last Name</label>
+                  <Input placeholder="Doe" className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500" />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-300 mb-2 block">Email</label>
-                <Input type="email" placeholder="john@example.com" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
+                <label className="text-sm font-medium text-gray-700 mb-2 block">Email</label>
+                <Input type="email" placeholder="john@example.com" className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500" />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-300 mb-2 block">Subject</label>
-                <Input placeholder="Research Collaboration" className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400" />
+                <label className="text-sm font-medium text-gray-700 mb-2 block">Subject</label>
+                <Input placeholder="Research Collaboration" className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500" />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-300 mb-2 block">Message</label>
-                <Textarea placeholder="Tell us about your project or inquiry..." className="border-gray-600/40 focus:border-purple-500 bg-gray-800/50 text-white placeholder:text-gray-400 min-h-[120px]" />
+                <label className="text-sm font-medium text-gray-700 mb-2 block">Message</label>
+                <Textarea placeholder="Tell us about your project or inquiry..." className="border-gray-300 focus:border-purple-500 bg-white text-gray-900 placeholder:text-gray-500 min-h-[120px]" />
               </div>
               <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800">
                 Send Message
