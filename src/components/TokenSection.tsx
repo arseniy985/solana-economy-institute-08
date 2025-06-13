@@ -52,53 +52,53 @@ const TokenSection = () => {
 
   const investmentTiers = [
     {
-      name: "Бронзовый",
+      name: "Bronze",
       min: "1,000 $SIDE",
-      benefits: ["Ежемесячные отчеты", "Доступ к сообществу"],
+      benefits: ["Monthly reports", "Community access"],
       color: "from-amber-600 to-orange-600",
       icon: <Award className="w-5 h-5" />
     },
     {
-      name: "Серебряный", 
+      name: "Silver", 
       min: "5,000 $SIDE",
-      benefits: ["Квартальные звонки", "Ранний доступ", "Стейкинг награды"],
+      benefits: ["Quarterly calls", "Early access", "Staking rewards"],
       color: "from-gray-400 to-gray-600",
       icon: <Star className="w-5 h-5" />
     },
     {
-      name: "Золотой",
+      name: "Gold",
       min: "25,000 $SIDE", 
-      benefits: ["Частные консультации", "Эксклюзивные события"],
+      benefits: ["Private consultations", "Exclusive events"],
       color: "from-yellow-400 to-yellow-600",
       icon: <Rocket className="w-5 h-5" />
     },
     {
-      name: "Бриллиантовый",
+      name: "Diamond",
       min: "100,000 $SIDE",
-      benefits: ["Прямой доступ к основателям", "Инвестиционные возможности"],
+      benefits: ["Direct founder access", "Investment opportunities"],
       color: "from-purple-400 to-violet-600", 
       icon: <Building className="w-5 h-5" />
     }
   ];
 
   const buySteps = [
-    "Установите Phantom кошелек",
-    "Купите SOL на бирже", 
-    "Используйте Jupiter DEX",
-    "Обменяйте SOL на $SIDE"
+    "Install Phantom wallet",
+    "Buy SOL on exchange", 
+    "Use Jupiter DEX",
+    "Swap SOL for $SIDE"
   ];
 
   const securityFeatures = [
-    { title: "Аудит CertiK", description: "Полная проверка безопасности", icon: <Shield className="w-5 h-5" /> },
-    { title: "Мультисиг казначейство", description: "Защищенное управление", icon: <Lock className="w-5 h-5" /> },
-    { title: "Заблокированная ликвидность", description: "Гарантированная стабильность", icon: <Banknote className="w-5 h-5" /> }
+    { title: "CertiK Audit", description: "Complete security verification", icon: <Shield className="w-5 h-5" /> },
+    { title: "Multisig Treasury", description: "Protected fund management", icon: <Lock className="w-5 h-5" /> },
+    { title: "Locked Liquidity", description: "Guaranteed stability", icon: <Banknote className="w-5 h-5" /> }
   ];
 
   const communityStats = [
-    { label: "Держатели", value: "2,847", icon: <Users className="w-5 h-5" /> },
-    { label: "Общий объем", value: "$1.2M", icon: <BarChart3 className="w-5 h-5" /> },
-    { label: "Дневной объем", value: "$45K", icon: <Activity className="w-5 h-5" /> },
-    { label: "Сожжено токенов", value: "12,450", icon: <Flame className="w-5 h-5" /> }
+    { label: "Holders", value: "2,847", icon: <Users className="w-5 h-5" /> },
+    { label: "Total Volume", value: "$1.2M", icon: <BarChart3 className="w-5 h-5" /> },
+    { label: "Daily Volume", value: "$45K", icon: <Activity className="w-5 h-5" /> },
+    { label: "Tokens Burned", value: "12,450", icon: <Flame className="w-5 h-5" /> }
   ];
 
   return (
@@ -114,106 +114,125 @@ const TokenSection = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600/20 to-violet-600/20 rounded-full text-purple-200 text-sm font-semibold mb-8 border border-purple-500/30 backdrop-blur-sm">
             <Flame className="w-5 h-5 mr-2 text-orange-400" />
-            Революционный токен будущего
+            Revolutionary Token of the Future
           </div>
           
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-            Токен <span className="bg-gradient-to-r from-purple-300 via-violet-400 to-purple-300 bg-clip-text text-transparent animate-pulse">$SIDE</span>
+            <span className="bg-gradient-to-r from-purple-300 via-violet-400 to-purple-300 bg-clip-text text-transparent animate-pulse">$SIDE</span> Token
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Первый в мире токен с автоматическими дивидендами в сфере блокчейн исследований. 
-            Получайте пассивный доход от развития цифровой экономики.
+            The world's first token with automatic dividends in blockchain research. 
+            Earn passive income from the development of the digital economy.
           </p>
         </div>
 
-        {/* Token Address */}
+        {/* Enhanced Token Address */}
         <div className="mb-12 max-w-4xl mx-auto">
-          <Card className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 border-purple-500/30 backdrop-blur-sm">
-            <CardContent className="p-6">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="flex-1">
-                  <h3 className="text-white font-semibold mb-2 flex items-center">
-                    <Network className="w-5 h-5 mr-2 text-purple-400" />
-                    Адрес контракта на Solana
-                  </h3>
-                  <code className="text-purple-300 text-sm font-mono break-all bg-gray-800/50 px-3 py-2 rounded-lg">
+          <div className="bg-gradient-to-r from-gray-800/90 via-gray-900/90 to-gray-800/90 backdrop-blur-sm rounded-2xl border border-purple-500/30 p-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div className="flex-1">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-violet-700 rounded-xl flex items-center justify-center mr-4">
+                    <Network className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-lg">Solana Contract Address</h3>
+                    <p className="text-purple-300 text-sm">Official $SIDE token contract</p>
+                  </div>
+                </div>
+                <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/30">
+                  <code className="text-purple-300 text-sm font-mono break-all">
                     {tokenAddress}
                   </code>
                 </div>
-                <Button
-                  onClick={copyToClipboard}
-                  className="bg-purple-600 hover:bg-purple-700 flex-shrink-0"
-                >
-                  {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
-                  {copied ? 'Скопировано!' : 'Копировать'}
-                </Button>
               </div>
-            </CardContent>
-          </Card>
+              <Button
+                onClick={copyToClipboard}
+                className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 flex-shrink-0 px-6 py-3 h-auto"
+              >
+                {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
+                {copied ? 'Copied!' : 'Copy Address'}
+              </Button>
+            </div>
+          </div>
         </div>
 
-        {/* Main Tabs Section */}
+        {/* Enhanced Tabs Section */}
         <div className="max-w-6xl mx-auto">
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-8 bg-gray-800/50 border border-gray-700/50">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-purple-600">
-                <PieChart className="w-4 h-4 mr-2" />
-                Обзор
-              </TabsTrigger>
-              <TabsTrigger value="rewards" className="data-[state=active]:bg-purple-600">
-                <Award className="w-4 h-4 mr-2" />
-                Награды
-              </TabsTrigger>
-              <TabsTrigger value="security" className="data-[state=active]:bg-purple-600">
-                <Shield className="w-4 h-4 mr-2" />
-                Безопасность
-              </TabsTrigger>
-              <TabsTrigger value="community" className="data-[state=active]:bg-purple-600">
-                <Users className="w-4 h-4 mr-2" />
-                Сообщество
-              </TabsTrigger>
-            </TabsList>
+            <div className="flex justify-center mb-8">
+              <TabsList className="grid grid-cols-4 bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-2">
+                <TabsTrigger 
+                  value="overview" 
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 transition-all duration-300"
+                >
+                  <PieChart className="w-4 h-4 mr-2" />
+                  Overview
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="rewards" 
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 transition-all duration-300"
+                >
+                  <Award className="w-4 h-4 mr-2" />
+                  Rewards
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="security" 
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 transition-all duration-300"
+                >
+                  <Shield className="w-4 h-4 mr-2" />
+                  Security
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="community" 
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 transition-all duration-300"
+                >
+                  <Users className="w-4 h-4 mr-2" />
+                  Community
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
             {/* Overview Tab */}
             <TabsContent value="overview" className="space-y-8">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Token Info */}
                 <div className="lg:col-span-2 space-y-6">
-                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30">
+                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30 rounded-2xl">
                     <CardHeader>
                       <CardTitle className="text-white flex items-center">
                         <BarChart3 className="w-6 h-6 mr-2 text-purple-400" />
-                        Информация о токене
+                        Token Information
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="grid grid-cols-2 gap-6">
                         <div className="space-y-4">
                           <div className="flex justify-between">
-                            <span className="text-gray-400">Символ</span>
+                            <span className="text-gray-400">Symbol</span>
                             <span className="text-white font-bold">$SIDE</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-gray-400">Блокчейн</span>
+                            <span className="text-gray-400">Blockchain</span>
                             <span className="text-purple-400 font-semibold">Solana</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-gray-400">Общее предложение</span>
+                            <span className="text-gray-400">Total Supply</span>
                             <span className="text-white font-bold">1,000,000</span>
                           </div>
                         </div>
                         <div className="space-y-4">
                           <div className="flex justify-between">
-                            <span className="text-gray-400">Дивиденды с</span>
+                            <span className="text-gray-400">Dividends from</span>
                             <span className="text-green-400 font-bold">$10M Cap</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-gray-400">Сжигание</span>
+                            <span className="text-gray-400">Burn Rate</span>
                             <span className="text-orange-400 font-bold">2%</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-gray-400">Распределения</span>
-                            <span className="text-blue-400 font-bold">Ежемесячно</span>
+                            <span className="text-gray-400">Distributions</span>
+                            <span className="text-blue-400 font-bold">Monthly</span>
                           </div>
                         </div>
                       </div>
@@ -221,17 +240,17 @@ const TokenSection = () => {
                   </Card>
 
                   {/* Investment Tiers */}
-                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30">
+                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30 rounded-2xl">
                     <CardHeader>
                       <CardTitle className="text-white flex items-center">
                         <Star className="w-6 h-6 mr-2 text-yellow-400" />
-                        Инвестиционные уровни
+                        Investment Tiers
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {investmentTiers.map((tier, index) => (
-                          <div key={index} className="flex items-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/30">
+                          <div key={index} className="flex items-center p-4 bg-gray-800/50 rounded-xl border border-gray-700/30 hover:border-purple-500/30 transition-colors">
                             <div className={`w-10 h-10 bg-gradient-to-r ${tier.color} rounded-lg flex items-center justify-center text-white mr-4 flex-shrink-0`}>
                               {tier.icon}
                             </div>
@@ -249,54 +268,54 @@ const TokenSection = () => {
 
                 {/* How to Buy */}
                 <div className="space-y-6">
-                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30">
+                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30 rounded-2xl">
                     <CardHeader>
                       <CardTitle className="text-white flex items-center">
                         <Lightbulb className="w-6 h-6 mr-2 text-yellow-400" />
-                        Как купить
+                        How to Buy
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       {buySteps.map((step, index) => (
                         <div key={index} className="flex items-start">
-                          <div className="w-7 h-7 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 flex-shrink-0">
+                          <div className="w-7 h-7 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 flex-shrink-0">
                             {index + 1}
                           </div>
                           <p className="text-gray-300 text-sm">{step}</p>
                         </div>
                       ))}
                       <div className="pt-4">
-                        <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800">
+                        <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 rounded-xl">
                           <Wallet className="w-4 h-4 mr-2" />
-                          Купить $SIDE
+                          Buy $SIDE
                         </Button>
                       </div>
                     </CardContent>
                   </Card>
 
                   {/* Key Features */}
-                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-green-500/30">
+                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-green-500/30 rounded-2xl">
                     <CardContent className="p-6">
                       <div className="space-y-4">
                         <div className="flex items-center">
                           <DollarSign className="w-6 h-6 text-green-400 mr-3" />
                           <div>
-                            <h4 className="text-white font-semibold text-sm">Автоматические дивиденды</h4>
-                            <p className="text-gray-400 text-xs">От прибыли института</p>
+                            <h4 className="text-white font-semibold text-sm">Automatic Dividends</h4>
+                            <p className="text-gray-400 text-xs">From institute profits</p>
                           </div>
                         </div>
                         <div className="flex items-center">
                           <TrendingUp className="w-6 h-6 text-purple-400 mr-3" />
                           <div>
-                            <h4 className="text-white font-semibold text-sm">Дефляционная модель</h4>
-                            <p className="text-gray-400 text-xs">Постоянное сжигание токенов</p>
+                            <h4 className="text-white font-semibold text-sm">Deflationary Model</h4>
+                            <p className="text-gray-400 text-xs">Continuous token burning</p>
                           </div>
                         </div>
                         <div className="flex items-center">
                           <Users className="w-6 h-6 text-blue-400 mr-3" />
                           <div>
-                            <h4 className="text-white font-semibold text-sm">Управление проектом</h4>
-                            <p className="text-gray-400 text-xs">Голосование по предложениям</p>
+                            <h4 className="text-white font-semibold text-sm">Project Governance</h4>
+                            <p className="text-gray-400 text-xs">Vote on proposals</p>
                           </div>
                         </div>
                       </div>
@@ -310,12 +329,12 @@ const TokenSection = () => {
             <TabsContent value="rewards" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {investmentTiers.map((tier, index) => (
-                  <Card key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-900/95 border-gray-600/30 hover:scale-105 transition-transform duration-300">
+                  <Card key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-900/95 border-gray-600/30 hover:scale-105 transition-transform duration-300 rounded-2xl">
                     <CardContent className="p-6">
                       <div className={`w-12 h-12 bg-gradient-to-r ${tier.color} rounded-xl flex items-center justify-center text-white mb-4`}>
                         {React.cloneElement(tier.icon, { className: "w-6 h-6" })}
                       </div>
-                      <h3 className="text-lg font-bold text-white mb-2">{tier.name} уровень</h3>
+                      <h3 className="text-lg font-bold text-white mb-2">{tier.name} Tier</h3>
                       <p className="text-purple-300 font-semibold mb-4">{tier.min}</p>
                       <ul className="space-y-2">
                         {tier.benefits.map((benefit, idx) => (
@@ -335,7 +354,7 @@ const TokenSection = () => {
             <TabsContent value="security" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {securityFeatures.map((feature, index) => (
-                  <Card key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-900/95 border-green-500/30">
+                  <Card key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-900/95 border-green-500/30 rounded-2xl">
                     <CardContent className="p-6 text-center">
                       <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
                         {feature.icon}
@@ -347,14 +366,14 @@ const TokenSection = () => {
                 ))}
               </div>
               
-              <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-green-500/30">
+              <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-green-500/30 rounded-2xl">
                 <CardContent className="p-8">
                   <div className="text-center">
                     <Shield className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-white mb-4">100% Безопасность</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4">100% Security</h3>
                     <p className="text-gray-300 max-w-2xl mx-auto">
-                      Наш смарт-контракт прошел полный аудит безопасности от CertiK. 
-                      Все средства защищены мультисиг-кошельком, а ликвидность заблокирована навсегда.
+                      Our smart contract has passed a complete security audit by CertiK. 
+                      All funds are protected by a multisig wallet, and liquidity is locked forever.
                     </p>
                   </div>
                 </CardContent>
@@ -365,7 +384,7 @@ const TokenSection = () => {
             <TabsContent value="community" className="space-y-6">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                 {communityStats.map((stat, index) => (
-                  <Card key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-900/95 border-purple-500/30">
+                  <Card key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-900/95 border-purple-500/30 rounded-2xl">
                     <CardContent className="p-6 text-center">
                       <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
                         {stat.icon}
@@ -377,26 +396,26 @@ const TokenSection = () => {
                 ))}
               </div>
 
-              <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30">
+              <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30 rounded-2xl">
                 <CardContent className="p-8">
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-white mb-4">Присоединяйтесь к сообществу</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4">Join the Community</h3>
                     <p className="text-gray-300 max-w-2xl mx-auto">
-                      Станьте частью инновационного сообщества инвесторов и исследователей блокчейн-технологий. 
-                      Получайте эксклюзивные обновления и участвуйте в развитии экосистемы.
+                      Become part of an innovative community of investors and blockchain technology researchers. 
+                      Get exclusive updates and participate in ecosystem development.
                     </p>
                   </div>
                   
                   <div className="flex flex-wrap justify-center gap-4">
-                    <Button variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-500/20">
+                    <Button variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-500/20 rounded-xl">
                       <Twitter className="w-4 h-4 mr-2" />
                       Twitter
                     </Button>
-                    <Button variant="outline" className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-500/20">
+                    <Button variant="outline" className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-500/20 rounded-xl">
                       <MessageCircle className="w-4 h-4 mr-2" />
                       Telegram  
                     </Button>
-                    <Button variant="outline" className="border-gray-400/50 text-gray-300 hover:bg-gray-500/20">
+                    <Button variant="outline" className="border-gray-400/50 text-gray-300 hover:bg-gray-500/20 rounded-xl">
                       <Github className="w-4 h-4 mr-2" />
                       GitHub
                     </Button>
@@ -409,21 +428,21 @@ const TokenSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-purple-900/80 via-violet-900/80 to-purple-900/80 p-8 rounded-2xl border border-purple-500/30 backdrop-blur-sm max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-purple-900/80 via-violet-900/80 to-purple-900/80 p-8 rounded-3xl border border-purple-500/30 backdrop-blur-sm max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Начните зарабатывать уже <span className="bg-gradient-to-r from-purple-300 to-violet-400 bg-clip-text text-transparent">сегодня</span>
+              Start earning <span className="bg-gradient-to-r from-purple-300 to-violet-400 bg-clip-text text-transparent">today</span>
             </h2>
             <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
-              Не упустите возможность получать пассивный доход от развития блокчейн-экономики
+              Don't miss the opportunity to earn passive income from blockchain economy development
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white px-8">
-                Купить $SIDE токены
+              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white px-8 rounded-xl">
+                Buy $SIDE Tokens
                 <ArrowUpRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-300 hover:bg-purple-600/30">
-                Смотреть на DexScreener
+              <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-300 hover:bg-purple-600/30 rounded-xl">
+                View on DexScreener
                 <ExternalLink className="w-5 h-5 ml-2" />
               </Button>
             </div>
