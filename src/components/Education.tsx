@@ -2,67 +2,62 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen, Users, Calendar, Award, TrendingUp, Shield, Target, Zap, DollarSign, Star, Clock, PlayCircle, Flame, Gift, Crown, Rocket } from 'lucide-react';
+import { BookOpen, Users, Calendar, Award, TrendingUp, Shield, Target, Zap, DollarSign, Star, Clock, PlayCircle, Flame, Gift, Crown, Rocket, MapPin, ExternalLink } from 'lucide-react';
+
 const Education = () => {
   const [activeCategory, setActiveCategory] = useState('free');
+
   const freeCourses = [{
     title: "Blockchain Fundamentals",
     description: "Complete introduction to blockchain technology, cryptocurrencies, and decentralized systems.",
     duration: "6 weeks",
-    level: "Beginner",
     students: 2500,
     rating: 4.9,
     price: "FREE",
     features: ["Certificate included", "24/7 Support", "Lifetime access"],
     icon: <BookOpen className="w-6 h-6" />,
     gradient: "from-red-500 to-orange-600",
-    badges: [{
+    badge: {
       text: "Most Popular",
       color: "from-emerald-500 to-teal-600",
       icon: <Star className="w-3 h-3 mr-1" />
-    }, {
-      text: "Best for Beginners",
-      color: "from-blue-500 to-cyan-600",
-      icon: <Rocket className="w-3 h-3 mr-1" />
-    }]
+    }
   }, {
     title: "Cryptocurrency Safety Guide",
     description: "Essential security practices for protecting your crypto assets and avoiding scams.",
     duration: "2 weeks",
-    level: "Beginner",
     students: 1800,
     rating: 4.8,
     price: "FREE",
     features: ["Security checklist", "Wallet setup guide", "Scam detection"],
     icon: <Shield className="w-6 h-6" />,
     gradient: "from-blue-500 to-cyan-600",
-    badges: [{
+    badge: {
       text: "Most Essential",
       color: "from-orange-500 to-red-600",
       icon: <Shield className="w-3 h-3 mr-1" />
-    }]
+    }
   }, {
     title: "Solana Token Creation Basics",
     description: "Learn the fundamentals of creating tokens on Solana blockchain for beginners.",
     duration: "4 weeks",
-    level: "Intermediate",
     students: 950,
     rating: 4.7,
     price: "FREE",
     features: ["Hands-on projects", "Code examples", "Community support"],
     icon: <Zap className="w-6 h-6" />,
     gradient: "from-purple-500 to-violet-600",
-    badges: [{
+    badge: {
       text: "Trending",
       color: "from-pink-500 to-rose-600",
       icon: <Flame className="w-3 h-3 mr-1" />
-    }]
+    }
   }];
+
   const paidCourses = [{
     title: "Advanced Token Economics & Growth",
     description: "Master advanced strategies for creating viral tokens with sustainable growth mechanisms and community building.",
     duration: "12 weeks",
-    level: "Advanced",
     students: 450,
     rating: 5.0,
     price: "$1,299",
@@ -70,20 +65,15 @@ const Education = () => {
     features: ["1-on-1 mentoring", "Launch support", "Marketing strategies", "Growth hacking"],
     icon: <TrendingUp className="w-6 h-6" />,
     gradient: "from-orange-500 to-red-600",
-    badges: [{
+    badge: {
       text: "Bestseller",
       color: "from-orange-500 to-red-600",
       icon: <TrendingUp className="w-3 h-3 mr-1" />
-    }, {
-      text: "Premium",
-      color: "from-yellow-500 to-orange-600",
-      icon: <Crown className="w-3 h-3 mr-1" />
-    }]
+    }
   }, {
     title: "Futures Trading Mastery",
     description: "Professional futures trading course with advanced strategies, risk management, and market psychology.",
     duration: "10 weeks",
-    level: "Advanced",
     students: 680,
     rating: 4.9,
     price: "$899",
@@ -91,16 +81,15 @@ const Education = () => {
     features: ["Live trading sessions", "Risk calculator tools", "Weekly analysis", "Telegram signals"],
     icon: <Target className="w-6 h-6" />,
     gradient: "from-yellow-500 to-orange-600",
-    badges: [{
+    badge: {
       text: "Best Value",
       color: "from-green-500 to-emerald-600",
       icon: <Gift className="w-3 h-3 mr-1" />
-    }]
+    }
   }, {
     title: "Crypto Sniping & MEV Strategies",
     description: "Professional course on identifying and capturing profitable opportunities in the crypto market.",
     duration: "8 weeks",
-    level: "Expert",
     students: 280,
     rating: 4.8,
     price: "$1,599",
@@ -108,20 +97,15 @@ const Education = () => {
     features: ["Private tools access", "Bot strategies", "Alpha calls", "VIP community"],
     icon: <Zap className="w-6 h-6" />,
     gradient: "from-pink-500 to-rose-600",
-    badges: [{
+    badge: {
       text: "Exclusive",
       color: "from-pink-500 to-rose-600",
       icon: <Award className="w-3 h-3 mr-1" />
-    }, {
-      text: "Limited Spots",
-      color: "from-red-500 to-pink-600",
-      icon: <Flame className="w-3 h-3 mr-1" />
-    }]
+    }
   }, {
     title: "Enterprise DeFi Development",
     description: "Build enterprise-grade DeFi protocols with advanced smart contract architecture and security.",
     duration: "16 weeks",
-    level: "Expert",
     students: 125,
     rating: 5.0,
     price: "$2,499",
@@ -129,32 +113,44 @@ const Education = () => {
     features: ["Enterprise projects", "Security audits", "Job placement", "Lifetime updates"],
     icon: <Award className="w-6 h-6" />,
     gradient: "from-indigo-500 to-purple-600",
-    badges: [{
+    badge: {
       text: "Enterprise",
       color: "from-indigo-500 to-purple-600",
       icon: <Crown className="w-3 h-3 mr-1" />
-    }]
+    }
   }];
+
   const upcomingEvents = [{
     title: "Solana Digital Economy Summit 2024",
     date: "June 15-17, 2024",
     location: "San Francisco, CA",
-    type: "Conference"
+    type: "Conference",
+    description: "Join industry leaders discussing the future of Solana ecosystem",
+    attendees: 2500,
+    price: "$299",
+    status: "Early Bird"
   }, {
     title: "Blockchain Regulation Workshop",
     date: "May 20, 2024",
     location: "Online",
-    type: "Workshop"
+    type: "Workshop",
+    description: "Navigate the evolving regulatory landscape of blockchain",
+    attendees: 150,
+    price: "FREE",
+    status: "Limited Spots"
   }, {
     title: "DeFi Innovation Hackathon",
     date: "July 1-3, 2024",
     location: "New York, NY",
-    type: "Hackathon"
+    type: "Hackathon",
+    description: "Build the next generation of DeFi protocols",
+    attendees: 500,
+    price: "$99",
+    status: "Hot"
   }];
-  const CourseCard = ({
-    course,
-    isFree
-  }) => <div className="group relative">
+
+  const CourseCard = ({ course, isFree }) => (
+    <div className="group relative">
       {/* Glow effect */}
       <div className={`absolute -inset-1 bg-gradient-to-r ${course.gradient} rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-500`}></div>
       
@@ -162,25 +158,20 @@ const Education = () => {
         {/* Background pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gray-800/20 to-transparent"></div>
         
+        {/* Badge at the top */}
+        <div className="absolute top-4 right-4 z-10">
+          <Badge className={`bg-gradient-to-r ${course.badge.color} text-white border-0 shadow-lg text-xs px-2 py-1`}>
+            {course.badge.icon}
+            {course.badge.text}
+          </Badge>
+        </div>
+
         <CardHeader className="relative pb-4">
           <div className="flex items-start justify-between mb-4">
             <div className={`w-14 h-14 bg-gradient-to-r ${course.gradient} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300`}>
               {course.icon}
             </div>
-            <div className="flex flex-col items-end gap-2">
-              <Badge variant="outline" className="border-gray-600/50 text-gray-300 bg-gray-800/50 text-xs px-2 py-1">
-                {course.level}
-              </Badge>
-            </div>
           </div>
-
-          {/* Badges - positioned below header */}
-          {course.badges && <div className="flex flex-wrap gap-2 mb-4">
-              {course.badges.map((badge, index) => <Badge key={index} className={`bg-gradient-to-r ${badge.color} text-white border-0 shadow-lg text-xs px-2 py-1`}>
-                  {badge.icon}
-                  {badge.text}
-                </Badge>)}
-            </div>}
           
           <CardTitle className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
             {course.title}
@@ -209,10 +200,12 @@ const Education = () => {
 
           {/* Features */}
           <div className="space-y-2">
-            {course.features.map((feature, index) => <div key={index} className="flex items-center text-sm text-gray-300">
+            {course.features.map((feature, index) => (
+              <div key={index} className="flex items-center text-sm text-gray-300">
                 <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-violet-600 rounded-full mr-3"></div>
                 {feature}
-              </div>)}
+              </div>
+            ))}
           </div>
 
           {/* Price and action */}
@@ -222,27 +215,122 @@ const Education = () => {
                 <span className={`text-2xl font-bold ${isFree ? 'text-emerald-400' : 'text-purple-400'}`}>
                   {course.price}
                 </span>
-                {course.originalPrice && <span className="text-sm text-gray-500 line-through">{course.originalPrice}</span>}
+                {course.originalPrice && (
+                  <span className="text-sm text-gray-500 line-through">{course.originalPrice}</span>
+                )}
               </div>
-              {course.originalPrice && <span className="text-xs text-green-400">
+              {course.originalPrice && (
+                <span className="text-xs text-green-400">
                   Save {Math.round((1 - parseInt(course.price.replace(/[$,]/g, '')) / parseInt(course.originalPrice.replace(/[$,]/g, ''))) * 100)}%
-                </span>}
+                </span>
+              )}
             </div>
             
             <Button className={`${isFree ? 'bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800' : 'bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800'} text-white shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-              {isFree ? <>
+              {isFree ? (
+                <>
                   <PlayCircle className="w-4 h-4 mr-2" />
                   Start Free
-                </> : <>
+                </>
+              ) : (
+                <>
                   <DollarSign className="w-4 h-4 mr-2" />
                   Enroll Now
-                </>}
+                </>
+              )}
             </Button>
           </div>
         </CardContent>
       </Card>
-    </div>;
-  return <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+    </div>
+  );
+
+  const EventCard = ({ event, index }) => {
+    const getStatusColor = (status) => {
+      switch (status) {
+        case 'Early Bird': return 'from-green-500 to-emerald-600';
+        case 'Limited Spots': return 'from-orange-500 to-red-600';
+        case 'Hot': return 'from-pink-500 to-rose-600';
+        default: return 'from-purple-500 to-violet-600';
+      }
+    };
+
+    const getTypeIcon = (type) => {
+      switch (type) {
+        case 'Conference': return <Users className="w-5 h-5" />;
+        case 'Workshop': return <BookOpen className="w-5 h-5" />;
+        case 'Hackathon': return <Zap className="w-5 h-5" />;
+        default: return <Calendar className="w-5 h-5" />;
+      }
+    };
+
+    return (
+      <div className="group relative">
+        {/* Animated background glow */}
+        <div className={`absolute -inset-1 bg-gradient-to-r ${getStatusColor(event.status)} rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500`}></div>
+        
+        <Card className="relative bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-gray-900/95 border-gray-700/50 hover:border-gray-600/80 transition-all duration-500 group-hover:scale-[1.02] backdrop-blur-sm h-full overflow-hidden">
+          {/* Top section with type and status */}
+          <div className="p-6 pb-4">
+            <div className="flex items-center justify-between mb-4">
+              <div className={`flex items-center px-3 py-1.5 bg-gradient-to-r ${getStatusColor(event.status)} rounded-full text-white text-sm font-medium`}>
+                {getTypeIcon(event.type)}
+                <span className="ml-2">{event.type}</span>
+              </div>
+              <Badge className={`bg-gradient-to-r ${getStatusColor(event.status)} text-white border-0 text-xs px-2 py-1`}>
+                {event.status}
+              </Badge>
+            </div>
+            
+            <h4 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+              {event.title}
+            </h4>
+            <p className="text-gray-300 text-sm leading-relaxed mb-4">
+              {event.description}
+            </p>
+          </div>
+
+          {/* Event details */}
+          <div className="px-6 pb-4 space-y-3">
+            <div className="flex items-center text-gray-400 text-sm">
+              <Calendar className="w-4 h-4 mr-3 text-purple-400" />
+              <span>{event.date}</span>
+            </div>
+            <div className="flex items-center text-gray-400 text-sm">
+              <MapPin className="w-4 h-4 mr-3 text-purple-400" />
+              <span>{event.location}</span>
+            </div>
+            <div className="flex items-center text-gray-400 text-sm">
+              <Users className="w-4 h-4 mr-3 text-purple-400" />
+              <span>{event.attendees} attendees expected</span>
+            </div>
+          </div>
+
+          {/* Bottom section with price and action */}
+          <div className="px-6 pb-6">
+            <div className="flex items-center justify-between pt-4 border-t border-gray-700/50">
+              <div className="flex flex-col">
+                <span className={`text-xl font-bold ${event.price === 'FREE' ? 'text-emerald-400' : 'text-purple-400'}`}>
+                  {event.price}
+                </span>
+                {event.price === 'FREE' && (
+                  <span className="text-xs text-emerald-400">Registration required</span>
+                )}
+              </div>
+              
+              <Button className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Register Now
+              </Button>
+            </div>
+          </div>
+        </Card>
+      </div>
+    );
+  };
+
+  return (
+    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 relative">
       {/* Enhanced background with more depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-950/98 via-slate-900/95 to-purple-950/98"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-violet-900/15 via-transparent to-purple-900/15"></div>
@@ -250,12 +338,8 @@ const Education = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-10 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-10 w-56 h-56 bg-violet-600/10 rounded-full blur-3xl animate-float" style={{
-        animationDelay: '2s'
-      }}></div>
-        <div className="absolute top-3/4 left-1/3 w-32 h-32 bg-fuchsia-600/10 rounded-full blur-3xl animate-float" style={{
-        animationDelay: '4s'
-      }}></div>
+        <div className="absolute bottom-1/4 right-10 w-56 h-56 bg-violet-600/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-3/4 left-1/3 w-32 h-32 bg-fuchsia-600/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -284,7 +368,14 @@ const Education = () => {
           <div className="flex justify-center mb-12">
             <div className="bg-gray-800/50 p-2 rounded-2xl border border-gray-700/50 backdrop-blur-sm">
               <div className="flex space-x-2">
-                <button onClick={() => setActiveCategory('free')} className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${activeCategory === 'free' ? 'bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-lg' : 'text-gray-400 hover:text-white hover:bg-gray-700/50'}`}>
+                <button
+                  onClick={() => setActiveCategory('free')}
+                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+                    activeCategory === 'free'
+                      ? 'bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-lg'
+                      : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+                  }`}
+                >
                   <div className="flex items-center">
                     <Star className="w-5 h-5 mr-2" />
                     Free Courses
@@ -293,7 +384,14 @@ const Education = () => {
                     </Badge>
                   </div>
                 </button>
-                <button onClick={() => setActiveCategory('paid')} className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${activeCategory === 'paid' ? 'bg-gradient-to-r from-purple-600 to-violet-700 text-white shadow-lg' : 'text-gray-400 hover:text-white hover:bg-gray-700/50'}`}>
+                <button
+                  onClick={() => setActiveCategory('paid')}
+                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+                    activeCategory === 'paid'
+                      ? 'bg-gradient-to-r from-purple-600 to-violet-700 text-white shadow-lg'
+                      : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+                  }`}
+                >
                   <div className="flex items-center">
                     <Award className="w-5 h-5 mr-2" />
                     Professional Courses
@@ -308,28 +406,25 @@ const Education = () => {
 
           {/* Course grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(activeCategory === 'free' ? freeCourses : paidCourses).map((course, index) => <CourseCard key={index} course={course} isFree={activeCategory === 'free'} />)}
+            {(activeCategory === 'free' ? freeCourses : paidCourses).map((course, index) => (
+              <CourseCard key={index} course={course} isFree={activeCategory === 'free'} />
+            ))}
           </div>
         </div>
 
-        {/* Improved Upcoming Events */}
-        <div>
-          <h3 className="text-3xl font-bold text-white mb-12 text-center">Upcoming Events</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {upcomingEvents.map((event, index) => <div key={index} className="group bg-gradient-to-br from-gray-800/70 via-gray-700/60 to-gray-800/70 p-6 rounded-xl border border-gray-600/40 hover:shadow-2xl transition-all duration-300 group-hover:scale-105 backdrop-blur-sm hover:border-purple-500/50">
-                <div className="flex items-center justify-between mb-4">
-                  <Badge className="bg-purple-500/20 text-purple-300 hover:bg-purple-500/20 border border-purple-400/30">
-                    {event.type}
-                  </Badge>
-                  <Calendar className="w-5 h-5 text-purple-300" />
-                </div>
-                <h4 className="text-lg font-semibold text-white mb-2">{event.title}</h4>
-                <p className="text-gray-200 text-sm mb-2">{event.date}</p>
-                <p className="text-gray-200 text-sm mb-4">{event.location}</p>
-                <Button variant="outline" size="sm" className="border-purple-400/50 hover:bg-purple-500/20 hover:border-purple-400 w-full transition-all duration-300 bg-purple-500/10 text-gray-600">
-                  Learn More
-                </Button>
-              </div>)}
+        {/* Redesigned Upcoming Events */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-white mb-4">Upcoming Events</h3>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Join our exclusive events and connect with industry leaders, learn from experts, and build the future together.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {upcomingEvents.map((event, index) => (
+              <EventCard key={index} event={event} index={index} />
+            ))}
           </div>
         </div>
 
@@ -358,6 +453,8 @@ const Education = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Education;
