@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -445,14 +446,14 @@ const Education = () => {
           </div>
         </div>
 
-        {/* Completely redesigned SIDE Certification Program */}
+        {/* Fixed SIDE Certification Program - ensuring "Program" text is fully visible */}
         <div className="mt-20 relative">
           {/* Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900/80 to-indigo-900 rounded-3xl"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
           
           {/* Content */}
-          <div className="relative p-12 lg:p-16">
+          <div className="relative p-8 lg:p-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left side - Content */}
               <div className="space-y-8">
@@ -462,9 +463,11 @@ const Education = () => {
                     Professional Certification
                   </div>
                   
-                  <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                  <h3 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
                     SIDE Certification
-                    <span className="block bg-gradient-to-r from-purple-300 to-violet-400 bg-clip-text text-transparent">
+                  </h3>
+                  <h3 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                    <span className="bg-gradient-to-r from-purple-300 to-violet-400 bg-clip-text text-transparent">
                       Program
                     </span>
                   </h3>
