@@ -81,25 +81,21 @@ const TokenSection = () => {
           </p>
         </div>
 
-        {/* Compact Contract Address */}
-        <div className="mb-10 max-w-2xl mx-auto">
-          <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl border border-purple-500/30 p-6">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center flex-1">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-violet-700 rounded-lg flex items-center justify-center mr-3">
-                  <Network className="w-5 h-5 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-white font-semibold text-sm mb-1">Contract Address</h3>
-                  <code className="text-purple-300 text-xs font-mono break-all bg-gray-700/50 px-2 py-1 rounded">
-                    {tokenAddress}
-                  </code>
-                </div>
-              </div>
+        {/* Contract Address - Centered */}
+        <div className="mb-10 max-w-xl mx-auto">
+          <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-purple-500/30 p-6">
+            <h3 className="text-white font-semibold text-center mb-4 flex items-center justify-center">
+              <Network className="w-5 h-5 mr-2 text-purple-400" />
+              Contract Address
+            </h3>
+            <div className="flex items-center gap-3">
+              <code className="flex-1 text-purple-300 text-sm font-mono bg-gray-700/50 px-4 py-3 rounded-lg text-center break-all">
+                {tokenAddress}
+              </code>
               <Button
                 onClick={copyToClipboard}
                 size="sm"
-                className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800"
+                className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 px-4 py-3"
               >
                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               </Button>
@@ -108,31 +104,31 @@ const TokenSection = () => {
         </div>
 
         {/* Tabs Section */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto mb-10">
           <Tabs defaultValue="overview" className="w-full">
             <div className="flex justify-center mb-8">
-              <TabsList className="grid grid-cols-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-1">
+              <TabsList className="grid grid-cols-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-1">
                 <TabsTrigger 
                   value="overview" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-lg px-4 py-2 text-sm"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 text-sm font-medium"
                 >
                   Overview
                 </TabsTrigger>
                 <TabsTrigger 
                   value="rewards" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-lg px-4 py-2 text-sm"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 text-sm font-medium"
                 >
                   Rewards
                 </TabsTrigger>
                 <TabsTrigger 
                   value="security" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-lg px-4 py-2 text-sm"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 text-sm font-medium"
                 >
                   Security
                 </TabsTrigger>
                 <TabsTrigger 
                   value="community" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-lg px-4 py-2 text-sm"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 text-sm font-medium"
                 >
                   Community
                 </TabsTrigger>
@@ -141,106 +137,41 @@ const TokenSection = () => {
 
             {/* Overview Tab */}
             <TabsContent value="overview" className="space-y-6">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Token Information */}
-                <div className="lg:col-span-2">
-                  <Card className="bg-gray-800/60 border-gray-700/50 rounded-xl backdrop-blur-sm">
-                    <CardHeader className="pb-4">
-                      <CardTitle className="text-white flex items-center text-lg">
-                        <BarChart3 className="w-5 h-5 mr-2 text-purple-400" />
-                        Token Information
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="flex justify-between">
-                          <span className="text-gray-400 text-sm">Symbol</span>
-                          <span className="text-white font-semibold">$SIDE</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-400 text-sm">Blockchain</span>
-                          <span className="text-purple-400 font-semibold">Solana</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-400 text-sm">Total Supply</span>
-                          <span className="text-white font-semibold">1,000,000</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-400 text-sm">Dividends from</span>
-                          <span className="text-green-400 font-semibold">$10M Cap</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-400 text-sm">Burn Rate</span>
-                          <span className="text-orange-400 font-semibold">2%</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-400 text-sm">Distributions</span>
-                          <span className="text-blue-400 font-semibold">Monthly</span>
-                        </div>
-                      </div>
-                      
-                      <div className="pt-4 border-t border-gray-700/50">
-                        <div className="flex items-center justify-between">
-                          <span className="text-gray-300 text-sm">Investment Tiers Available</span>
-                          <Badge variant="outline" className="border-purple-500/50 text-purple-300">
-                            4 Levels
-                          </Badge>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                {/* How to Buy */}
-                <div>
-                  <Card className="bg-gray-800/60 border-gray-700/50 rounded-xl backdrop-blur-sm">
-                    <CardHeader className="pb-4">
-                      <CardTitle className="text-white flex items-center text-lg">
-                        <Lightbulb className="w-5 h-5 mr-2 text-yellow-400" />
-                        How to Buy
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-3">
-                      <div className="space-y-3">
-                        <div className="flex items-start">
-                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 mt-0.5">
-                            1
-                          </div>
-                          <p className="text-gray-300 text-sm">Install Phantom wallet</p>
-                        </div>
-                        <div className="flex items-start">
-                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 mt-0.5">
-                            2
-                          </div>
-                          <p className="text-gray-300 text-sm">Buy SOL on exchange</p>
-                        </div>
-                        <div className="flex items-start">
-                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 mt-0.5">
-                            3
-                          </div>
-                          <p className="text-gray-300 text-sm">Use Jupiter DEX</p>
-                        </div>
-                        <div className="flex items-start">
-                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 mt-0.5">
-                            4
-                          </div>
-                          <p className="text-gray-300 text-sm">Swap SOL for $SIDE</p>
-                        </div>
-                      </div>
-                      <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 rounded-lg mt-4">
-                        <Wallet className="w-4 h-4 mr-2" />
-                        Buy $SIDE
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-
-              {/* Feature Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="bg-gray-800/60 border-green-500/30 rounded-xl backdrop-blur-sm">
+                {/* Token Information - Top Left */}
+                <Card className="bg-gray-800/80 border-gray-600/30 rounded-2xl backdrop-blur-sm">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-violet-700 rounded-xl flex items-center justify-center mr-3">
+                        <BarChart3 className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="text-white font-semibold">Token Information</h3>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-400 text-sm">Symbol</span>
+                        <span className="text-white font-semibold">$SIDE</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400 text-sm">Blockchain</span>
+                        <span className="text-purple-400 font-semibold">Solana</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400 text-sm">Total Supply</span>
+                        <span className="text-white font-semibold">1,000,000</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400 text-sm">Dividends from</span>
+                        <span className="text-green-400 font-semibold">$10M Cap</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Dividends - Top Center */}
+                <Card className="bg-gray-800/80 border-green-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
                       <DollarSign className="w-6 h-6" />
                     </div>
                     <h3 className="text-white font-semibold mb-2">Dividends from $10M</h3>
@@ -248,9 +179,10 @@ const TokenSection = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gray-800/60 border-blue-500/30 rounded-xl backdrop-blur-sm">
+                {/* Security - Top Right */}
+                <Card className="bg-gray-800/80 border-blue-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
                       <Shield className="w-6 h-6" />
                     </div>
                     <h3 className="text-white font-semibold mb-2">Security</h3>
@@ -258,15 +190,73 @@ const TokenSection = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+                {/* How to Buy - Bottom Left */}
+                <Card className="bg-gray-800/80 border-yellow-500/30 rounded-2xl backdrop-blur-sm">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-yellow-600 rounded-xl flex items-center justify-center mr-3">
+                        <Lightbulb className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="text-white font-semibold">How to Buy</h3>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-start text-sm">
+                        <div className="w-5 h-5 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-2 mt-0.5 flex-shrink-0">
+                          1
+                        </div>
+                        <span className="text-gray-300">Install Phantom wallet</span>
+                      </div>
+                      <div className="flex items-start text-sm">
+                        <div className="w-5 h-5 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-2 mt-0.5 flex-shrink-0">
+                          2
+                        </div>
+                        <span className="text-gray-300">Buy SOL on exchange</span>
+                      </div>
+                      <div className="flex items-start text-sm">
+                        <div className="w-5 h-5 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-2 mt-0.5 flex-shrink-0">
+                          3
+                        </div>
+                        <span className="text-gray-300">Use Jupiter DEX</span>
+                      </div>
+                      <div className="flex items-start text-sm">
+                        <div className="w-5 h-5 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-2 mt-0.5 flex-shrink-0">
+                          4
+                        </div>
+                        <span className="text-gray-300">Swap SOL for $SIDE</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Value Growth - Bottom Center */}
+                <Card className="bg-gray-800/80 border-purple-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                    <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
                       <TrendingUp className="w-6 h-6" />
                     </div>
                     <h3 className="text-white font-semibold mb-2">Value Growth</h3>
                     <p className="text-gray-400 text-sm">Deflationary model with burn mechanism</p>
                   </CardContent>
                 </Card>
+
+                {/* Community - Bottom Right */}
+                <Card className="bg-gray-800/80 border-orange-500/30 rounded-2xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
+                      <Users className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-white font-semibold mb-2">Community</h3>
+                    <p className="text-gray-400 text-sm">Active participation in ecosystem development</p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Investment Tiers Button */}
+              <div className="text-center pt-4">
+                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600/20 to-violet-600/20 rounded-full text-purple-200 text-sm font-semibold border border-purple-500/30">
+                  <Star className="w-4 h-4 mr-2 text-purple-400" />
+                  4 Investment Tiers Available - See Rewards Tab
+                </div>
               </div>
             </TabsContent>
 
@@ -274,10 +264,10 @@ const TokenSection = () => {
             <TabsContent value="rewards" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {investmentTiers.map((tier, index) => (
-                  <Card key={index} className="bg-gray-800/60 border-gray-700/50 rounded-xl backdrop-blur-sm hover:border-purple-500/30 transition-colors">
+                  <Card key={index} className="bg-gray-800/80 border-gray-600/30 rounded-2xl backdrop-blur-sm hover:border-purple-500/30 transition-colors">
                     <CardContent className="p-6">
                       <div className="flex items-center mb-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-violet-700 rounded-lg flex items-center justify-center text-white mr-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-violet-700 rounded-xl flex items-center justify-center text-white mr-3">
                           <Star className="w-5 h-5" />
                         </div>
                         <div>
@@ -302,9 +292,9 @@ const TokenSection = () => {
             {/* Security Tab */}
             <TabsContent value="security" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="bg-gray-800/60 border-green-500/30 rounded-xl backdrop-blur-sm">
+                <Card className="bg-gray-800/80 border-green-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
                       <Shield className="w-6 h-6" />
                     </div>
                     <h3 className="text-white font-semibold mb-2">CertiK Audit</h3>
@@ -312,9 +302,9 @@ const TokenSection = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gray-800/60 border-green-500/30 rounded-xl backdrop-blur-sm">
+                <Card className="bg-gray-800/80 border-green-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
                       <Lock className="w-6 h-6" />
                     </div>
                     <h3 className="text-white font-semibold mb-2">Multisig Treasury</h3>
@@ -322,9 +312,9 @@ const TokenSection = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gray-800/60 border-green-500/30 rounded-xl backdrop-blur-sm">
+                <Card className="bg-gray-800/80 border-green-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
                       <Banknote className="w-6 h-6" />
                     </div>
                     <h3 className="text-white font-semibold mb-2">Locked Liquidity</h3>
@@ -336,10 +326,10 @@ const TokenSection = () => {
 
             {/* Community Tab */}
             <TabsContent value="community" className="space-y-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                <Card className="bg-gray-800/80 border-purple-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
+                    <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
                       <Users className="w-5 h-5" />
                     </div>
                     <p className="text-xl font-bold text-white mb-1">2,847</p>
@@ -347,9 +337,9 @@ const TokenSection = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+                <Card className="bg-gray-800/80 border-purple-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
+                    <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
                       <BarChart3 className="w-5 h-5" />
                     </div>
                     <p className="text-xl font-bold text-white mb-1">$1.2M</p>
@@ -357,9 +347,9 @@ const TokenSection = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+                <Card className="bg-gray-800/80 border-purple-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
+                    <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
                       <Activity className="w-5 h-5" />
                     </div>
                     <p className="text-xl font-bold text-white mb-1">$45K</p>
@@ -367,9 +357,9 @@ const TokenSection = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+                <Card className="bg-gray-800/80 border-purple-500/30 rounded-2xl backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
+                    <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
                       <Flame className="w-5 h-5" />
                     </div>
                     <p className="text-xl font-bold text-white mb-1">12,450</p>
@@ -378,16 +368,16 @@ const TokenSection = () => {
                 </Card>
               </div>
 
-              <div className="flex justify-center gap-4 pt-6">
-                <Button variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-500/20 rounded-lg">
+              <div className="flex justify-center gap-4">
+                <Button variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-500/20 rounded-xl">
                   <Twitter className="w-4 h-4 mr-2" />
                   Twitter
                 </Button>
-                <Button variant="outline" className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-500/20 rounded-lg">
+                <Button variant="outline" className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-500/20 rounded-xl">
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Telegram  
                 </Button>
-                <Button variant="outline" className="border-gray-400/50 text-gray-300 hover:bg-gray-500/20 rounded-lg">
+                <Button variant="outline" className="border-gray-400/50 text-gray-300 hover:bg-gray-500/20 rounded-xl">
                   <Github className="w-4 h-4 mr-2" />
                   GitHub
                 </Button>
@@ -407,11 +397,11 @@ const TokenSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white px-6 rounded-lg">
+              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white px-6 rounded-xl">
                 Buy $SIDE Tokens
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-300 hover:bg-purple-600/30 rounded-lg">
+              <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-300 hover:bg-purple-600/30 rounded-xl">
                 View on DexScreener
                 <ExternalLink className="w-4 h-4 ml-2" />
               </Button>
