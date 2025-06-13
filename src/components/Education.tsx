@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen, Users, Calendar, Award, TrendingUp, Shield, Target, Zap, DollarSign, Star, Clock, PlayCircle, Flame, Gift, Crown, Rocket, MapPin, ExternalLink } from 'lucide-react';
+import { BookOpen, Users, Calendar, Award, TrendingUp, Shield, Target, Zap, DollarSign, Star, Clock, PlayCircle, Flame, Gift, Crown, Rocket, MapPin, ExternalLink, Download, CheckCircle, Globe, Briefcase } from 'lucide-react';
 
 const Education = () => {
   const [activeCategory, setActiveCategory] = useState('free');
@@ -33,7 +33,7 @@ const Education = () => {
     icon: <Shield className="w-6 h-6" />,
     gradient: "from-blue-500 to-cyan-600",
     badge: {
-      text: "Most Essential",
+      text: "Essential",
       color: "from-orange-500 to-red-600",
       icon: <Shield className="w-3 h-3 mr-1" />
     }
@@ -125,36 +125,39 @@ const Education = () => {
     date: "June 15-17, 2024",
     location: "San Francisco, CA",
     type: "Conference",
-    description: "Join industry leaders discussing the future of Solana ecosystem",
+    description: "Join industry leaders discussing the future of Solana ecosystem and digital economics innovations.",
     attendees: 2500,
     price: "$299",
-    status: "Early Bird"
+    status: "Early Bird",
+    features: ["3-day access", "Networking events", "Speaker sessions", "Workshop access"]
   }, {
     title: "Blockchain Regulation Workshop",
     date: "May 20, 2024",
     location: "Online",
     type: "Workshop",
-    description: "Navigate the evolving regulatory landscape of blockchain",
+    description: "Navigate the evolving regulatory landscape of blockchain technology and compliance requirements.",
     attendees: 150,
     price: "FREE",
-    status: "Limited Spots"
+    status: "Limited Spots",
+    features: ["Expert speakers", "Q&A sessions", "Certificate", "Recording access"]
   }, {
     title: "DeFi Innovation Hackathon",
     date: "July 1-3, 2024",
     location: "New York, NY",
     type: "Hackathon",
-    description: "Build the next generation of DeFi protocols",
+    description: "Build the next generation of DeFi protocols with mentorship from industry experts.",
     attendees: 500,
     price: "$99",
-    status: "Hot"
+    status: "Hot",
+    features: ["48-hour coding", "Mentorship", "Prize pool", "Demo day"]
   }];
 
   const CourseCard = ({ course, isFree }) => (
-    <div className="group relative">
+    <div className="group relative h-full">
       {/* Glow effect */}
       <div className={`absolute -inset-1 bg-gradient-to-r ${course.gradient} rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-500`}></div>
       
-      <Card className="relative bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-gray-900/95 border-gray-700/50 hover:border-gray-600/80 transition-all duration-500 group-hover:scale-[1.02] backdrop-blur-sm h-full overflow-hidden">
+      <Card className="relative bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-gray-900/95 border-gray-700/50 hover:border-gray-600/80 transition-all duration-500 group-hover:scale-[1.02] backdrop-blur-sm h-full overflow-hidden flex flex-col">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gray-800/20 to-transparent"></div>
         
@@ -166,7 +169,7 @@ const Education = () => {
           </Badge>
         </div>
 
-        <CardHeader className="relative pb-4">
+        <CardHeader className="relative pb-4 flex-none">
           <div className="flex items-start justify-between mb-4">
             <div className={`w-14 h-14 bg-gradient-to-r ${course.gradient} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300`}>
               {course.icon}
@@ -181,7 +184,7 @@ const Education = () => {
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="relative space-y-6">
+        <CardContent className="relative space-y-6 flex-grow flex flex-col">
           {/* Course stats */}
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center text-gray-400">
@@ -199,7 +202,7 @@ const Education = () => {
           </div>
 
           {/* Features */}
-          <div className="space-y-2">
+          <div className="space-y-2 flex-grow">
             {course.features.map((feature, index) => (
               <div key={index} className="flex items-center text-sm text-gray-300">
                 <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-violet-600 rounded-full mr-3"></div>
@@ -209,7 +212,7 @@ const Education = () => {
           </div>
 
           {/* Price and action */}
-          <div className="flex items-center justify-between pt-4 border-t border-gray-700/50">
+          <div className="flex items-center justify-between pt-4 border-t border-gray-700/50 flex-none">
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
                 <span className={`text-2xl font-bold ${isFree ? 'text-emerald-400' : 'text-purple-400'}`}>
@@ -265,21 +268,25 @@ const Education = () => {
     };
 
     return (
-      <div className="group relative">
+      <div className="group relative h-full">
         {/* Animated background glow */}
-        <div className={`absolute -inset-1 bg-gradient-to-r ${getStatusColor(event.status)} rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500`}></div>
+        <div className={`absolute -inset-1 bg-gradient-to-r ${getStatusColor(event.status)} rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-500`}></div>
         
-        <Card className="relative bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-gray-900/95 border-gray-700/50 hover:border-gray-600/80 transition-all duration-500 group-hover:scale-[1.02] backdrop-blur-sm h-full overflow-hidden">
-          {/* Top section with type and status */}
-          <div className="p-6 pb-4">
-            <div className="flex items-center justify-between mb-4">
+        <Card className="relative bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-gray-900/95 border-gray-700/50 hover:border-gray-600/80 transition-all duration-500 group-hover:scale-[1.02] backdrop-blur-sm h-full overflow-hidden flex flex-col">
+          {/* Badge at the top */}
+          <div className="absolute top-4 right-4 z-10">
+            <Badge className={`bg-gradient-to-r ${getStatusColor(event.status)} text-white border-0 text-xs px-2 py-1`}>
+              {event.status}
+            </Badge>
+          </div>
+
+          {/* Header section */}
+          <div className="p-6 pb-4 flex-none">
+            <div className="flex items-center mb-4">
               <div className={`flex items-center px-3 py-1.5 bg-gradient-to-r ${getStatusColor(event.status)} rounded-full text-white text-sm font-medium`}>
                 {getTypeIcon(event.type)}
                 <span className="ml-2">{event.type}</span>
               </div>
-              <Badge className={`bg-gradient-to-r ${getStatusColor(event.status)} text-white border-0 text-xs px-2 py-1`}>
-                {event.status}
-              </Badge>
             </div>
             
             <h4 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
@@ -291,7 +298,7 @@ const Education = () => {
           </div>
 
           {/* Event details */}
-          <div className="px-6 pb-4 space-y-3">
+          <div className="px-6 pb-4 space-y-3 flex-grow">
             <div className="flex items-center text-gray-400 text-sm">
               <Calendar className="w-4 h-4 mr-3 text-purple-400" />
               <span>{event.date}</span>
@@ -304,10 +311,20 @@ const Education = () => {
               <Users className="w-4 h-4 mr-3 text-purple-400" />
               <span>{event.attendees} attendees expected</span>
             </div>
+
+            {/* Features */}
+            <div className="space-y-2 mt-4">
+              {event.features.map((feature, idx) => (
+                <div key={idx} className="flex items-center text-sm text-gray-300">
+                  <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-violet-600 rounded-full mr-3"></div>
+                  {feature}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Bottom section with price and action */}
-          <div className="px-6 pb-6">
+          <div className="px-6 pb-6 flex-none">
             <div className="flex items-center justify-between pt-4 border-t border-gray-700/50">
               <div className="flex flex-col">
                 <span className={`text-xl font-bold ${event.price === 'FREE' ? 'text-emerald-400' : 'text-purple-400'}`}>
@@ -428,26 +445,114 @@ const Education = () => {
           </div>
         </div>
 
-        {/* Enhanced Certification */}
+        {/* Completely redesigned SIDE Certification Program */}
         <div className="mt-20 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 rounded-3xl blur-lg opacity-20"></div>
-          <div className="relative bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 rounded-3xl p-12 text-white shadow-2xl">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
-                <Award className="w-10 h-10 opacity-90" />
+          {/* Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900/80 to-indigo-900 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+          
+          {/* Content */}
+          <div className="relative p-12 lg:p-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left side - Content */}
+              <div className="space-y-8">
+                <div>
+                  <div className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm border border-white/20">
+                    <Award className="w-4 h-4 mr-2" />
+                    Professional Certification
+                  </div>
+                  
+                  <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                    SIDE Certification
+                    <span className="block bg-gradient-to-r from-purple-300 to-violet-400 bg-clip-text text-transparent">
+                      Program
+                    </span>
+                  </h3>
+                  
+                  <p className="text-xl text-gray-200 leading-relaxed mb-8">
+                    Earn industry-recognized credentials in blockchain economics and digital business innovation. 
+                    Designed in partnership with leading academic institutions and industry experts.
+                  </p>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white mb-2">5K+</div>
+                    <div className="text-sm text-gray-300">Certified Students</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white mb-2">98%</div>
+                    <div className="text-sm text-gray-300">Success Rate</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white mb-2">50+</div>
+                    <div className="text-sm text-gray-300">Partner Companies</div>
+                  </div>
+                </div>
+
+                {/* Features */}
+                <div className="space-y-4">
+                  {[
+                    { icon: <CheckCircle className="w-5 h-5" />, text: "Industry-recognized certification" },
+                    { icon: <Globe className="w-5 h-5" />, text: "Global network of professionals" },
+                    { icon: <Briefcase className="w-5 h-5" />, text: "Career advancement opportunities" },
+                    { icon: <Award className="w-5 h-5" />, text: "Expert-led curriculum" }
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center text-gray-200">
+                      <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4 text-purple-300">
+                        {feature.icon}
+                      </div>
+                      <span className="text-lg">{feature.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white px-8 py-4">
+                    <Award className="w-5 h-5 mr-2" />
+                    View Certification Tracks
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm px-8 py-4">
+                    <Download className="w-5 h-5 mr-2" />
+                    Download Curriculum
+                  </Button>
+                </div>
               </div>
-              <h3 className="text-4xl font-bold mb-6">SIDE Certification Program</h3>
-              <p className="text-xl opacity-95 mb-8 leading-relaxed">
-                Earn industry-recognized credentials in blockchain economics and digital business innovation. 
-                Our certification program is designed in partnership with leading academic institutions and industry experts.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="outline" className="border-white/30 bg-white/10 text-white hover:bg-white hover:text-purple-600 backdrop-blur-sm transition-all duration-300">
-                  View Certification Tracks
-                </Button>
-                <Button size="lg" className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300">
-                  Download Curriculum
-                </Button>
+
+              {/* Right side - Visual */}
+              <div className="relative">
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/20">
+                  {/* Certificate mockup */}
+                  <div className="bg-white rounded-lg p-6 shadow-2xl">
+                    <div className="text-center space-y-4">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center mx-auto">
+                        <Award className="w-8 h-8 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">SIDE Institute</h4>
+                        <p className="text-gray-600 text-sm">Certificate of Completion</p>
+                      </div>
+                      <div className="py-4 border-t border-b border-gray-200">
+                        <p className="text-lg font-semibold text-gray-900">Blockchain Economics</p>
+                        <p className="text-sm text-gray-600">Professional Certification</p>
+                      </div>
+                      <div className="flex justify-between text-xs text-gray-500">
+                        <span>Certificate ID: #SE2024</span>
+                        <span>Issued: 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating elements */}
+                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center animate-float">
+                    <Star className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '1s' }}>
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
