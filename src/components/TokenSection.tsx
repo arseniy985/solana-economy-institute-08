@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -112,9 +111,9 @@ const TokenSection = () => {
             {' '}Token
           </h2>
           
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-200 max-w-4xl mx-auto mb-8">
             <span className="font-bold text-purple-300">Solana Institute of Digital Economics</span> - 
-            The first dividend-paying token in blockchain research
+            The first dividend-paying blockchain research token
           </p>
 
           {/* Token Address Card */}
@@ -396,15 +395,27 @@ const TokenSection = () => {
         {/* Social Links and CTA */}
         <div className="text-center space-y-8">
           <div className="flex justify-center space-x-4">
-            <Button variant="outline" size="sm" className="border-gray-600 bg-gray-800/50 text-blue-400 hover:bg-blue-600/20 hover:border-blue-500">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="border-blue-400/50 bg-gray-800/50 text-blue-400 hover:bg-blue-500/20 hover:border-blue-400 hover:text-white transition-all duration-300"
+            >
               <Twitter className="w-4 h-4 mr-2" />
               Twitter
             </Button>
-            <Button variant="outline" size="sm" className="border-gray-600 bg-gray-800/50 text-blue-400 hover:bg-blue-600/20 hover:border-blue-500">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="border-cyan-400/50 bg-gray-800/50 text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-400 hover:text-white transition-all duration-300"
+            >
               <MessageCircle className="w-4 h-4 mr-2" />
               Telegram
             </Button>
-            <Button variant="outline" size="sm" className="border-gray-600 bg-gray-800/50 text-gray-300 hover:bg-gray-600/20 hover:border-gray-500">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="border-gray-400/50 bg-gray-800/50 text-gray-300 hover:bg-gray-500/20 hover:border-gray-400 hover:text-white transition-all duration-300"
+            >
               <Github className="w-4 h-4 mr-2" />
               GitHub
             </Button>

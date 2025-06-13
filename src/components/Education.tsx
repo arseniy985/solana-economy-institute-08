@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -18,7 +19,7 @@ const Education = () => {
       price: "FREE",
       features: ["Certificate included", "24/7 Support", "Lifetime access"],
       icon: <BookOpen className="w-6 h-6" />,
-      gradient: "from-emerald-500 to-teal-600",
+      gradient: "from-red-500 to-orange-600",
       popular: true
     },
     {
@@ -134,22 +135,22 @@ const Education = () => {
         {/* Background pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gray-800/20 to-transparent"></div>
         
-        {/* Badges */}
-        <div className="absolute top-4 right-4 flex flex-col gap-2 z-10">
+        {/* Badges - positioned better to avoid overlapping */}
+        <div className="absolute top-4 right-4 flex flex-col gap-2 z-10 max-w-[120px]">
           {course.popular && (
-            <Badge className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white border-0 shadow-lg">
+            <Badge className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white border-0 shadow-lg text-xs">
               <Star className="w-3 h-3 mr-1" />
               Most Popular
             </Badge>
           )}
           {course.bestseller && (
-            <Badge className="bg-gradient-to-r from-orange-500 to-red-600 text-white border-0 shadow-lg">
+            <Badge className="bg-gradient-to-r from-orange-500 to-red-600 text-white border-0 shadow-lg text-xs">
               <TrendingUp className="w-3 h-3 mr-1" />
               Bestseller
             </Badge>
           )}
           {course.exclusive && (
-            <Badge className="bg-gradient-to-r from-pink-500 to-rose-600 text-white border-0 shadow-lg">
+            <Badge className="bg-gradient-to-r from-pink-500 to-rose-600 text-white border-0 shadow-lg text-xs">
               <Award className="w-3 h-3 mr-1" />
               Exclusive
             </Badge>
@@ -157,7 +158,7 @@ const Education = () => {
         </div>
 
         <CardHeader className="relative pb-4">
-          <div className="flex items-start justify-between mb-4">
+          <div className="flex items-start justify-between mb-4 pr-28">
             <div className={`w-14 h-14 bg-gradient-to-r ${course.gradient} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300`}>
               {course.icon}
             </div>
@@ -330,7 +331,7 @@ const Education = () => {
           </div>
         </div>
 
-        {/* Upcoming Events - unchanged */}
+        {/* Improved Upcoming Events */}
         <div>
           <h3 className="text-3xl font-bold text-white mb-12 text-center">Upcoming Events</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -345,7 +346,11 @@ const Education = () => {
                 <h4 className="text-lg font-semibold text-white mb-2">{event.title}</h4>
                 <p className="text-gray-200 text-sm mb-2">{event.date}</p>
                 <p className="text-gray-200 text-sm mb-4">{event.location}</p>
-                <Button variant="outline" size="sm" className="border-purple-400/30 text-purple-300 hover:bg-purple-500/20 w-full">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="border-purple-400/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 hover:text-white w-full transition-all duration-300"
+                >
                   Learn More
                 </Button>
               </div>
@@ -367,10 +372,17 @@ const Education = () => {
                 Our certification program is designed in partnership with leading academic institutions and industry experts.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="outline" className="border-white/30 bg-white/10 text-white hover:bg-white hover:text-purple-600 backdrop-blur-sm">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white/30 bg-white/10 text-white hover:bg-white hover:text-purple-600 backdrop-blur-sm transition-all duration-300"
+                >
                   View Certification Tracks
                 </Button>
-                <Button size="lg" className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30">
+                <Button 
+                  size="lg" 
+                  className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300"
+                >
                   Download Curriculum
                 </Button>
               </div>
