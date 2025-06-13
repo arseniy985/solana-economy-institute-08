@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen, Users, Calendar, Award, TrendingUp, Shield, Target, Zap, DollarSign, Star, Clock, PlayCircle } from 'lucide-react';
+import { BookOpen, Users, Calendar, Award, TrendingUp, Shield, Target, Zap, DollarSign, Star, Clock, PlayCircle, Flame, Gift, Crown, Rocket } from 'lucide-react';
 
 const Education = () => {
   const [activeCategory, setActiveCategory] = useState('free');
@@ -20,7 +20,10 @@ const Education = () => {
       features: ["Certificate included", "24/7 Support", "Lifetime access"],
       icon: <BookOpen className="w-6 h-6" />,
       gradient: "from-red-500 to-orange-600",
-      popular: true
+      badges: [
+        { text: "Most Popular", color: "from-emerald-500 to-teal-600", icon: <Star className="w-3 h-3 mr-1" /> },
+        { text: "Best for Beginners", color: "from-blue-500 to-cyan-600", icon: <Rocket className="w-3 h-3 mr-1" /> }
+      ]
     },
     {
       title: "Cryptocurrency Safety Guide",
@@ -32,7 +35,10 @@ const Education = () => {
       price: "FREE",
       features: ["Security checklist", "Wallet setup guide", "Scam detection"],
       icon: <Shield className="w-6 h-6" />,
-      gradient: "from-blue-500 to-cyan-600"
+      gradient: "from-blue-500 to-cyan-600",
+      badges: [
+        { text: "Most Essential", color: "from-orange-500 to-red-600", icon: <Shield className="w-3 h-3 mr-1" /> }
+      ]
     },
     {
       title: "Solana Token Creation Basics",
@@ -44,7 +50,10 @@ const Education = () => {
       price: "FREE",
       features: ["Hands-on projects", "Code examples", "Community support"],
       icon: <Zap className="w-6 h-6" />,
-      gradient: "from-purple-500 to-violet-600"
+      gradient: "from-purple-500 to-violet-600",
+      badges: [
+        { text: "Trending", color: "from-pink-500 to-rose-600", icon: <Flame className="w-3 h-3 mr-1" /> }
+      ]
     }
   ];
 
@@ -61,7 +70,10 @@ const Education = () => {
       features: ["1-on-1 mentoring", "Launch support", "Marketing strategies", "Growth hacking"],
       icon: <TrendingUp className="w-6 h-6" />,
       gradient: "from-orange-500 to-red-600",
-      bestseller: true
+      badges: [
+        { text: "Bestseller", color: "from-orange-500 to-red-600", icon: <TrendingUp className="w-3 h-3 mr-1" /> },
+        { text: "Premium", color: "from-yellow-500 to-orange-600", icon: <Crown className="w-3 h-3 mr-1" /> }
+      ]
     },
     {
       title: "Futures Trading Mastery",
@@ -74,7 +86,10 @@ const Education = () => {
       originalPrice: "$1,299",
       features: ["Live trading sessions", "Risk calculator tools", "Weekly analysis", "Telegram signals"],
       icon: <Target className="w-6 h-6" />,
-      gradient: "from-yellow-500 to-orange-600"
+      gradient: "from-yellow-500 to-orange-600",
+      badges: [
+        { text: "Best Value", color: "from-green-500 to-emerald-600", icon: <Gift className="w-3 h-3 mr-1" /> }
+      ]
     },
     {
       title: "Crypto Sniping & MEV Strategies",
@@ -88,7 +103,10 @@ const Education = () => {
       features: ["Private tools access", "Bot strategies", "Alpha calls", "VIP community"],
       icon: <Zap className="w-6 h-6" />,
       gradient: "from-pink-500 to-rose-600",
-      exclusive: true
+      badges: [
+        { text: "Exclusive", color: "from-pink-500 to-rose-600", icon: <Award className="w-3 h-3 mr-1" /> },
+        { text: "Limited Spots", color: "from-red-500 to-pink-600", icon: <Flame className="w-3 h-3 mr-1" /> }
+      ]
     },
     {
       title: "Enterprise DeFi Development",
@@ -101,7 +119,10 @@ const Education = () => {
       originalPrice: "$3,499",
       features: ["Enterprise projects", "Security audits", "Job placement", "Lifetime updates"],
       icon: <Award className="w-6 h-6" />,
-      gradient: "from-indigo-500 to-purple-600"
+      gradient: "from-indigo-500 to-purple-600",
+      badges: [
+        { text: "Enterprise", color: "from-indigo-500 to-purple-600", icon: <Crown className="w-3 h-3 mr-1" /> }
+      ]
     }
   ];
 
@@ -135,37 +156,32 @@ const Education = () => {
         {/* Background pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gray-800/20 to-transparent"></div>
         
-        {/* Badges - positioned better to avoid overlapping */}
-        <div className="absolute top-4 right-4 flex flex-col gap-2 z-10 max-w-[120px]">
-          {course.popular && (
-            <Badge className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white border-0 shadow-lg text-xs">
-              <Star className="w-3 h-3 mr-1" />
-              Most Popular
-            </Badge>
-          )}
-          {course.bestseller && (
-            <Badge className="bg-gradient-to-r from-orange-500 to-red-600 text-white border-0 shadow-lg text-xs">
-              <TrendingUp className="w-3 h-3 mr-1" />
-              Bestseller
-            </Badge>
-          )}
-          {course.exclusive && (
-            <Badge className="bg-gradient-to-r from-pink-500 to-rose-600 text-white border-0 shadow-lg text-xs">
-              <Award className="w-3 h-3 mr-1" />
-              Exclusive
-            </Badge>
-          )}
-        </div>
-
         <CardHeader className="relative pb-4">
-          <div className="flex items-start justify-between mb-4 pr-28">
+          <div className="flex items-start justify-between mb-4">
             <div className={`w-14 h-14 bg-gradient-to-r ${course.gradient} rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300`}>
               {course.icon}
             </div>
-            <Badge variant="outline" className="border-gray-600/50 text-gray-300 bg-gray-800/50">
-              {course.level}
-            </Badge>
+            <div className="flex flex-col items-end gap-2">
+              <Badge variant="outline" className="border-gray-600/50 text-gray-300 bg-gray-800/50 text-xs px-2 py-1">
+                {course.level}
+              </Badge>
+            </div>
           </div>
+
+          {/* Badges - positioned below header */}
+          {course.badges && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {course.badges.map((badge, index) => (
+                <Badge 
+                  key={index}
+                  className={`bg-gradient-to-r ${badge.color} text-white border-0 shadow-lg text-xs px-2 py-1`}
+                >
+                  {badge.icon}
+                  {badge.text}
+                </Badge>
+              ))}
+            </div>
+          )}
           
           <CardTitle className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
             {course.title}
@@ -349,7 +365,7 @@ const Education = () => {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="border-purple-400/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 hover:text-white w-full transition-all duration-300"
+                  className="border-purple-400/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 hover:text-white w-full transition-all duration-300 bg-purple-500/10"
                 >
                   Learn More
                 </Button>
