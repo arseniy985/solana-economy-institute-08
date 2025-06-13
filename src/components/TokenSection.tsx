@@ -50,46 +50,46 @@ const TokenSection = () => {
   const features = [
     {
       icon: <DollarSign className="w-6 h-6" />,
-      title: "Дивиденды от $10M",
-      description: "Автоматические выплаты держателям токенов",
+      title: "Dividends from $10M",
+      description: "Automatic payouts to token holders",
       color: "from-green-500 to-emerald-600"
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Безопасность",
-      description: "Аудированный смарт-контракт на Solana",
+      title: "Security",
+      description: "Audited smart contract on Solana",
       color: "from-blue-500 to-cyan-600"
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
-      title: "Рост стоимости",
-      description: "Дефляционная модель с burn механизмом",
+      title: "Value Growth",
+      description: "Deflationary model with burn mechanism",
       color: "from-purple-500 to-violet-600"
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Сообщество",
-      description: "Активное участие в развитии экосистемы",
+      title: "Community",
+      description: "Active participation in ecosystem development",
       color: "from-orange-500 to-red-600"
     }
   ];
 
   const roadmapItems = [
-    { milestone: "$1M", reward: "5% от прибыли", status: "completed" },
-    { milestone: "$5M", reward: "10% от прибыли", status: "current" },
-    { milestone: "$10M", reward: "Начало дивидендов", status: "upcoming" },
-    { milestone: "$50M", reward: "20% от прибыли", status: "future" }
+    { milestone: "$1M", reward: "5% of profit", status: "completed" },
+    { milestone: "$5M", reward: "10% of profit", status: "current" },
+    { milestone: "$10M", reward: "Dividend start", status: "upcoming" },
+    { milestone: "$50M", reward: "20% of profit", status: "future" }
   ];
 
   const tabs = [
-    { id: 'overview', label: 'Обзор', icon: <Coins className="w-4 h-4" /> },
-    { id: 'rewards', label: 'Награды', icon: <Award className="w-4 h-4" /> },
-    { id: 'security', label: 'Безопасность', icon: <Shield className="w-4 h-4" /> },
-    { id: 'roadmap', label: 'Роадмап', icon: <Target className="w-4 h-4" /> }
+    { id: 'overview', label: 'Overview', icon: <Coins className="w-4 h-4" /> },
+    { id: 'rewards', label: 'Rewards', icon: <Award className="w-4 h-4" /> },
+    { id: 'security', label: 'Security', icon: <Shield className="w-4 h-4" /> },
+    { id: 'roadmap', label: 'Roadmap', icon: <Target className="w-4 h-4" /> }
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <section id="token" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-purple-600/20 rounded-full blur-xl animate-float"></div>
@@ -102,7 +102,7 @@ const TokenSection = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600/30 to-violet-600/30 rounded-full text-purple-200 text-sm font-medium mb-6 border border-purple-500/50 backdrop-blur-sm">
             <Coins className="w-5 h-5 mr-2" />
-            Официальный токен SIDE
+            Official SIDE Token
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
@@ -114,13 +114,13 @@ const TokenSection = () => {
           
           <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
             <span className="font-bold text-purple-300">Solana Institute of Digital Economics</span> - 
-            первый токен с дивидендами в области блокчейн исследований
+            The first dividend-paying token in blockchain research
           </p>
 
           {/* Token Address Card */}
           <div className="max-w-2xl mx-auto mb-12">
             <div className="bg-gradient-to-r from-gray-800/80 via-gray-700/60 to-gray-800/80 p-6 rounded-2xl border border-purple-500/30 backdrop-blur-sm">
-              <h3 className="text-lg font-semibold text-white mb-4">Адрес контракта</h3>
+              <h3 className="text-lg font-semibold text-white mb-4">Contract Address</h3>
               <div className="flex items-center justify-between bg-black/50 p-4 rounded-lg border border-gray-600/50">
                 <code className="text-purple-300 text-sm font-mono break-all mr-4">{tokenAddress}</code>
                 <Button
@@ -165,25 +165,25 @@ const TokenSection = () => {
                     <CardHeader>
                       <CardTitle className="text-white flex items-center">
                         <Coins className="w-6 h-6 mr-2 text-purple-400" />
-                        Информация о токене
+                        Token Information
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <p className="text-gray-400 text-sm">Символ</p>
+                          <p className="text-gray-400 text-sm">Symbol</p>
                           <p className="text-white font-bold">$SIDE</p>
                         </div>
                         <div>
-                          <p className="text-gray-400 text-sm">Блокчейн</p>
+                          <p className="text-gray-400 text-sm">Blockchain</p>
                           <p className="text-white font-bold">Solana</p>
                         </div>
                         <div>
-                          <p className="text-gray-400 text-sm">Общее предложение</p>
+                          <p className="text-gray-400 text-sm">Total Supply</p>
                           <p className="text-white font-bold">1,000,000</p>
                         </div>
                         <div>
-                          <p className="text-gray-400 text-sm">Дивиденды с</p>
+                          <p className="text-gray-400 text-sm">Dividends from</p>
                           <p className="text-green-400 font-bold">$10M Cap</p>
                         </div>
                       </div>
@@ -195,26 +195,26 @@ const TokenSection = () => {
                     <CardHeader>
                       <CardTitle className="text-white flex items-center">
                         <Zap className="w-6 h-6 mr-2 text-yellow-400" />
-                        Как купить
+                        How to Buy
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <ol className="space-y-3 text-gray-200">
                         <li className="flex items-start">
                           <span className="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">1</span>
-                          Установите Phantom или Solflare кошелек
+                          Install Phantom or Solflare wallet
                         </li>
                         <li className="flex items-start">
                           <span className="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">2</span>
-                          Купите SOL на бирже
+                          Buy SOL on exchange
                         </li>
                         <li className="flex items-start">
                           <span className="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">3</span>
-                          Используйте Jupiter или Raydium DEX
+                          Use Jupiter or Raydium DEX
                         </li>
                         <li className="flex items-start">
                           <span className="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">4</span>
-                          Обменяйте SOL на $SIDE
+                          Swap SOL for $SIDE
                         </li>
                       </ol>
                     </CardContent>
@@ -247,21 +247,21 @@ const TokenSection = () => {
                   <CardHeader>
                     <CardTitle className="text-white flex items-center">
                       <Award className="w-6 h-6 mr-2 text-yellow-400" />
-                      Система наград
+                      Reward System
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <div className="bg-gradient-to-r from-green-600/20 to-emerald-600/20 p-4 rounded-lg border border-green-500/30">
-                      <h4 className="text-green-400 font-bold mb-2">💰 Дивиденды</h4>
-                      <p className="text-gray-200 text-sm">Ежемесячные выплаты в SOL начинаются при достижении $10M market cap</p>
+                      <h4 className="text-green-400 font-bold mb-2">💰 Dividends</h4>
+                      <p className="text-gray-200 text-sm">Monthly payouts in SOL starting at $10M market cap</p>
                     </div>
                     <div className="bg-gradient-to-r from-purple-600/20 to-violet-600/20 p-4 rounded-lg border border-purple-500/30">
-                      <h4 className="text-purple-400 font-bold mb-2">🔥 Burn механизм</h4>
-                      <p className="text-gray-200 text-sm">2% от каждой транзакции сжигается, уменьшая общее предложение</p>
+                      <h4 className="text-purple-400 font-bold mb-2">🔥 Burn Mechanism</h4>
+                      <p className="text-gray-200 text-sm">2% of each transaction is burned, reducing total supply</p>
                     </div>
                     <div className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 p-4 rounded-lg border border-blue-500/30">
-                      <h4 className="text-blue-400 font-bold mb-2">🎯 Стейкинг</h4>
-                      <p className="text-gray-200 text-sm">Дополнительные награды за долгосрочное удержание токенов</p>
+                      <h4 className="text-blue-400 font-bold mb-2">🎯 Staking</h4>
+                      <p className="text-gray-200 text-sm">Additional rewards for long-term token holding</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -270,7 +270,7 @@ const TokenSection = () => {
                   <CardHeader>
                     <CardTitle className="text-white flex items-center">
                       <BarChart3 className="w-6 h-6 mr-2 text-green-400" />
-                      Прогноз доходности
+                      Yield Forecast
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -303,25 +303,25 @@ const TokenSection = () => {
                   <CardHeader>
                     <CardTitle className="text-white flex items-center">
                       <Shield className="w-6 h-6 mr-2 text-blue-400" />
-                      Безопасность смарт-контракта
+                      Smart Contract Security
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-center p-3 bg-green-600/20 rounded-lg border border-green-500/30">
                       <Check className="w-5 h-5 text-green-400 mr-3" />
-                      <span className="text-gray-200">Аудит от CertiK</span>
+                      <span className="text-gray-200">CertiK Audit</span>
                     </div>
                     <div className="flex items-center p-3 bg-green-600/20 rounded-lg border border-green-500/30">
                       <Check className="w-5 h-5 text-green-400 mr-3" />
-                      <span className="text-gray-200">Проверен Solscan</span>
+                      <span className="text-gray-200">Solscan Verified</span>
                     </div>
                     <div className="flex items-center p-3 bg-green-600/20 rounded-lg border border-green-500/30">
                       <Check className="w-5 h-5 text-green-400 mr-3" />
-                      <span className="text-gray-200">Открытый исходный код</span>
+                      <span className="text-gray-200">Open Source</span>
                     </div>
                     <div className="flex items-center p-3 bg-green-600/20 rounded-lg border border-green-500/30">
                       <Check className="w-5 h-5 text-green-400 mr-3" />
-                      <span className="text-gray-200">Заблокированная ликвидность</span>
+                      <span className="text-gray-200">Locked Liquidity</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -330,21 +330,21 @@ const TokenSection = () => {
                   <CardHeader>
                     <CardTitle className="text-white flex items-center">
                       <Lock className="w-6 h-6 mr-2 text-yellow-400" />
-                      Дополнительная защита
+                      Additional Protection
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="p-4 bg-yellow-600/20 rounded-lg border border-yellow-500/30">
-                      <h4 className="text-yellow-400 font-bold mb-2">🔒 Мультисиг кошелек</h4>
-                      <p className="text-gray-200 text-sm">Средства управляются 3-of-5 мультисиг кошельком</p>
+                      <h4 className="text-yellow-400 font-bold mb-2">🔒 Multisig Wallet</h4>
+                      <p className="text-gray-200 text-sm">Funds managed by 3-of-5 multisig wallet</p>
                     </div>
                     <div className="p-4 bg-blue-600/20 rounded-lg border border-blue-500/30">
                       <h4 className="text-blue-400 font-bold mb-2">⏱️ Timelock</h4>
-                      <p className="text-gray-200 text-sm">24-часовая задержка на все критические изменения</p>
+                      <p className="text-gray-200 text-sm">24-hour delay on all critical changes</p>
                     </div>
                     <div className="p-4 bg-purple-600/20 rounded-lg border border-purple-500/30">
-                      <h4 className="text-purple-400 font-bold mb-2">🔍 Прозрачность</h4>
-                      <p className="text-gray-200 text-sm">Все транзакции публично доступны в блокчейне</p>
+                      <h4 className="text-purple-400 font-bold mb-2">🔍 Transparency</h4>
+                      <p className="text-gray-200 text-sm">All transactions publicly available on blockchain</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -353,7 +353,7 @@ const TokenSection = () => {
 
             {activeTab === 'roadmap' && (
               <div className="space-y-8">
-                <h3 className="text-2xl font-bold text-white text-center mb-8">Дорожная карта токена</h3>
+                <h3 className="text-2xl font-bold text-white text-center mb-8">Token Roadmap</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {roadmapItems.map((item, index) => (
                     <div key={index} className="relative">
@@ -381,7 +381,7 @@ const TokenSection = () => {
                           <h4 className="text-xl font-bold text-white mb-2">{item.milestone}</h4>
                           <p className="text-gray-300 text-sm">{item.reward}</p>
                           {item.status === 'current' && (
-                            <Badge className="mt-3 bg-purple-600">Текущий этап</Badge>
+                            <Badge className="mt-3 bg-purple-600">Current Stage</Badge>
                           )}
                         </div>
                       </div>
@@ -396,15 +396,15 @@ const TokenSection = () => {
         {/* Social Links and CTA */}
         <div className="text-center space-y-8">
           <div className="flex justify-center space-x-4">
-            <Button variant="outline" size="sm" className="border-purple-400/50 text-purple-300 hover:bg-purple-600/30">
+            <Button variant="outline" size="sm" className="border-gray-600 bg-gray-800/50 text-blue-400 hover:bg-blue-600/20 hover:border-blue-500">
               <Twitter className="w-4 h-4 mr-2" />
               Twitter
             </Button>
-            <Button variant="outline" size="sm" className="border-purple-400/50 text-purple-300 hover:bg-purple-600/30">
+            <Button variant="outline" size="sm" className="border-gray-600 bg-gray-800/50 text-blue-400 hover:bg-blue-600/20 hover:border-blue-500">
               <MessageCircle className="w-4 h-4 mr-2" />
               Telegram
             </Button>
-            <Button variant="outline" size="sm" className="border-purple-400/50 text-purple-300 hover:bg-purple-600/30">
+            <Button variant="outline" size="sm" className="border-gray-600 bg-gray-800/50 text-gray-300 hover:bg-gray-600/20 hover:border-gray-500">
               <Github className="w-4 h-4 mr-2" />
               GitHub
             </Button>
@@ -412,12 +412,12 @@ const TokenSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white px-8 py-4">
-              Купить $SIDE токены
+              Buy $SIDE Tokens
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
             <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-300 px-8 py-4 hover:bg-purple-600/30">
               <ExternalLink className="w-5 h-5 mr-2" />
-              Смотреть на DexScreener
+              View on DexScreener
             </Button>
           </div>
         </div>
