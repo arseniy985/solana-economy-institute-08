@@ -51,291 +51,240 @@ const TokenSection = () => {
   };
 
   const investmentTiers = [
-    {
-      name: "Bronze",
-      min: "1,000 $SIDE",
-      benefits: ["Monthly reports", "Community access"],
-      color: "from-amber-600 to-orange-600",
-      icon: <Award className="w-5 h-5" />
-    },
-    {
-      name: "Silver", 
-      min: "5,000 $SIDE",
-      benefits: ["Quarterly calls", "Early access", "Staking rewards"],
-      color: "from-gray-400 to-gray-600",
-      icon: <Star className="w-5 h-5" />
-    },
-    {
-      name: "Gold",
-      min: "25,000 $SIDE", 
-      benefits: ["Private consultations", "Exclusive events"],
-      color: "from-yellow-400 to-yellow-600",
-      icon: <Rocket className="w-5 h-5" />
-    },
-    {
-      name: "Diamond",
-      min: "100,000 $SIDE",
-      benefits: ["Direct founder access", "Investment opportunities"],
-      color: "from-purple-400 to-violet-600", 
-      icon: <Building className="w-5 h-5" />
-    }
-  ];
-
-  const buySteps = [
-    "Install Phantom wallet",
-    "Buy SOL on exchange", 
-    "Use Jupiter DEX",
-    "Swap SOL for $SIDE"
-  ];
-
-  const securityFeatures = [
-    { title: "CertiK Audit", description: "Complete security verification", icon: <Shield className="w-5 h-5" /> },
-    { title: "Multisig Treasury", description: "Protected fund management", icon: <Lock className="w-5 h-5" /> },
-    { title: "Locked Liquidity", description: "Guaranteed stability", icon: <Banknote className="w-5 h-5" /> }
-  ];
-
-  const communityStats = [
-    { label: "Holders", value: "2,847", icon: <Users className="w-5 h-5" /> },
-    { label: "Total Volume", value: "$1.2M", icon: <BarChart3 className="w-5 h-5" /> },
-    { label: "Daily Volume", value: "$45K", icon: <Activity className="w-5 h-5" /> },
-    { label: "Tokens Burned", value: "12,450", icon: <Flame className="w-5 h-5" /> }
+    { name: "Bronze", min: "1,000 $SIDE", benefits: ["Monthly reports", "Community access"] },
+    { name: "Silver", min: "5,000 $SIDE", benefits: ["Quarterly calls", "Early access", "Staking rewards"] },
+    { name: "Gold", min: "25,000 $SIDE", benefits: ["Private consultations", "Exclusive events"] },
+    { name: "Diamond", min: "100,000 $SIDE", benefits: ["Direct founder access", "Investment opportunities"] }
   ];
 
   return (
-    <section id="token" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative overflow-hidden">
+    <section id="token" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-violet-600/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Enhanced Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600/20 to-violet-600/20 rounded-full text-purple-200 text-sm font-semibold mb-8 border border-purple-500/30 backdrop-blur-sm">
-            <Flame className="w-5 h-5 mr-2 text-orange-400" />
-            Revolutionary Token of the Future
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600/20 to-violet-600/20 rounded-full text-purple-200 text-sm font-semibold mb-6 border border-purple-500/30">
+            <Coins className="w-4 h-4 mr-2 text-purple-400" />
+            Official $SIDE Token
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-purple-300 via-violet-400 to-purple-300 bg-clip-text text-transparent animate-pulse">$SIDE</span> Token
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            <span className="bg-gradient-to-r from-purple-300 via-violet-400 to-purple-300 bg-clip-text text-transparent">$SIDE</span> Token
           </h1>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            The world's first token with automatic dividends in blockchain research. 
-            Earn passive income from the development of the digital economy.
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            Solana Institute of Digital Economics - the first token with dividends in blockchain research
           </p>
         </div>
 
-        {/* Enhanced Token Address */}
-        <div className="mb-12 max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-gray-800/90 via-gray-900/90 to-gray-800/90 backdrop-blur-sm rounded-2xl border border-purple-500/30 p-8">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <div className="flex-1">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-violet-700 rounded-xl flex items-center justify-center mr-4">
-                    <Network className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold text-lg">Solana Contract Address</h3>
-                    <p className="text-purple-300 text-sm">Official $SIDE token contract</p>
-                  </div>
+        {/* Compact Contract Address */}
+        <div className="mb-10 max-w-2xl mx-auto">
+          <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl border border-purple-500/30 p-6">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center flex-1">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-violet-700 rounded-lg flex items-center justify-center mr-3">
+                  <Network className="w-5 h-5 text-white" />
                 </div>
-                <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/30">
-                  <code className="text-purple-300 text-sm font-mono break-all">
+                <div className="flex-1">
+                  <h3 className="text-white font-semibold text-sm mb-1">Contract Address</h3>
+                  <code className="text-purple-300 text-xs font-mono break-all bg-gray-700/50 px-2 py-1 rounded">
                     {tokenAddress}
                   </code>
                 </div>
               </div>
               <Button
                 onClick={copyToClipboard}
-                className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 flex-shrink-0 px-6 py-3 h-auto"
+                size="sm"
+                className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800"
               >
-                {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
-                {copied ? 'Copied!' : 'Copy Address'}
+                {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Enhanced Tabs Section */}
-        <div className="max-w-6xl mx-auto">
+        {/* Tabs Section */}
+        <div className="max-w-5xl mx-auto">
           <Tabs defaultValue="overview" className="w-full">
             <div className="flex justify-center mb-8">
-              <TabsList className="grid grid-cols-4 bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-2">
+              <TabsList className="grid grid-cols-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-1">
                 <TabsTrigger 
                   value="overview" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 transition-all duration-300"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-lg px-4 py-2 text-sm"
                 >
-                  <PieChart className="w-4 h-4 mr-2" />
                   Overview
                 </TabsTrigger>
                 <TabsTrigger 
                   value="rewards" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 transition-all duration-300"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-lg px-4 py-2 text-sm"
                 >
-                  <Award className="w-4 h-4 mr-2" />
                   Rewards
                 </TabsTrigger>
                 <TabsTrigger 
                   value="security" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 transition-all duration-300"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-lg px-4 py-2 text-sm"
                 >
-                  <Shield className="w-4 h-4 mr-2" />
                   Security
                 </TabsTrigger>
                 <TabsTrigger 
                   value="community" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 transition-all duration-300"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-lg px-4 py-2 text-sm"
                 >
-                  <Users className="w-4 h-4 mr-2" />
                   Community
                 </TabsTrigger>
               </TabsList>
             </div>
 
             {/* Overview Tab */}
-            <TabsContent value="overview" className="space-y-8">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Token Info */}
-                <div className="lg:col-span-2 space-y-6">
-                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30 rounded-2xl">
-                    <CardHeader>
-                      <CardTitle className="text-white flex items-center">
-                        <BarChart3 className="w-6 h-6 mr-2 text-purple-400" />
+            <TabsContent value="overview" className="space-y-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Token Information */}
+                <div className="lg:col-span-2">
+                  <Card className="bg-gray-800/60 border-gray-700/50 rounded-xl backdrop-blur-sm">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-white flex items-center text-lg">
+                        <BarChart3 className="w-5 h-5 mr-2 text-purple-400" />
                         Token Information
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <div className="grid grid-cols-2 gap-6">
-                        <div className="space-y-4">
-                          <div className="flex justify-between">
-                            <span className="text-gray-400">Symbol</span>
-                            <span className="text-white font-bold">$SIDE</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-400">Blockchain</span>
-                            <span className="text-purple-400 font-semibold">Solana</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-400">Total Supply</span>
-                            <span className="text-white font-bold">1,000,000</span>
-                          </div>
+                    <CardContent className="space-y-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="flex justify-between">
+                          <span className="text-gray-400 text-sm">Symbol</span>
+                          <span className="text-white font-semibold">$SIDE</span>
                         </div>
-                        <div className="space-y-4">
-                          <div className="flex justify-between">
-                            <span className="text-gray-400">Dividends from</span>
-                            <span className="text-green-400 font-bold">$10M Cap</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-400">Burn Rate</span>
-                            <span className="text-orange-400 font-bold">2%</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-400">Distributions</span>
-                            <span className="text-blue-400 font-bold">Monthly</span>
-                          </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-400 text-sm">Blockchain</span>
+                          <span className="text-purple-400 font-semibold">Solana</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-400 text-sm">Total Supply</span>
+                          <span className="text-white font-semibold">1,000,000</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-400 text-sm">Dividends from</span>
+                          <span className="text-green-400 font-semibold">$10M Cap</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-400 text-sm">Burn Rate</span>
+                          <span className="text-orange-400 font-semibold">2%</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-400 text-sm">Distributions</span>
+                          <span className="text-blue-400 font-semibold">Monthly</span>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Investment Tiers */}
-                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30 rounded-2xl">
-                    <CardHeader>
-                      <CardTitle className="text-white flex items-center">
-                        <Star className="w-6 h-6 mr-2 text-yellow-400" />
-                        Investment Tiers
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {investmentTiers.map((tier, index) => (
-                          <div key={index} className="flex items-center p-4 bg-gray-800/50 rounded-xl border border-gray-700/30 hover:border-purple-500/30 transition-colors">
-                            <div className={`w-10 h-10 bg-gradient-to-r ${tier.color} rounded-lg flex items-center justify-center text-white mr-4 flex-shrink-0`}>
-                              {tier.icon}
-                            </div>
-                            <div>
-                              <h4 className="text-white font-semibold text-sm">{tier.name}</h4>
-                              <p className="text-purple-300 font-medium text-sm">{tier.min}</p>
-                              <p className="text-gray-400 text-xs">{tier.benefits[0]}</p>
-                            </div>
-                          </div>
-                        ))}
+                      
+                      <div className="pt-4 border-t border-gray-700/50">
+                        <div className="flex items-center justify-between">
+                          <span className="text-gray-300 text-sm">Investment Tiers Available</span>
+                          <Badge variant="outline" className="border-purple-500/50 text-purple-300">
+                            4 Levels
+                          </Badge>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
                 </div>
 
                 {/* How to Buy */}
-                <div className="space-y-6">
-                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30 rounded-2xl">
-                    <CardHeader>
-                      <CardTitle className="text-white flex items-center">
-                        <Lightbulb className="w-6 h-6 mr-2 text-yellow-400" />
+                <div>
+                  <Card className="bg-gray-800/60 border-gray-700/50 rounded-xl backdrop-blur-sm">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-white flex items-center text-lg">
+                        <Lightbulb className="w-5 h-5 mr-2 text-yellow-400" />
                         How to Buy
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-4">
-                      {buySteps.map((step, index) => (
-                        <div key={index} className="flex items-start">
-                          <div className="w-7 h-7 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 flex-shrink-0">
-                            {index + 1}
+                    <CardContent className="space-y-3">
+                      <div className="space-y-3">
+                        <div className="flex items-start">
+                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 mt-0.5">
+                            1
                           </div>
-                          <p className="text-gray-300 text-sm">{step}</p>
+                          <p className="text-gray-300 text-sm">Install Phantom wallet</p>
                         </div>
-                      ))}
-                      <div className="pt-4">
-                        <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 rounded-xl">
-                          <Wallet className="w-4 h-4 mr-2" />
-                          Buy $SIDE
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Key Features */}
-                  <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-green-500/30 rounded-2xl">
-                    <CardContent className="p-6">
-                      <div className="space-y-4">
-                        <div className="flex items-center">
-                          <DollarSign className="w-6 h-6 text-green-400 mr-3" />
-                          <div>
-                            <h4 className="text-white font-semibold text-sm">Automatic Dividends</h4>
-                            <p className="text-gray-400 text-xs">From institute profits</p>
+                        <div className="flex items-start">
+                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 mt-0.5">
+                            2
                           </div>
+                          <p className="text-gray-300 text-sm">Buy SOL on exchange</p>
                         </div>
-                        <div className="flex items-center">
-                          <TrendingUp className="w-6 h-6 text-purple-400 mr-3" />
-                          <div>
-                            <h4 className="text-white font-semibold text-sm">Deflationary Model</h4>
-                            <p className="text-gray-400 text-xs">Continuous token burning</p>
+                        <div className="flex items-start">
+                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 mt-0.5">
+                            3
                           </div>
+                          <p className="text-gray-300 text-sm">Use Jupiter DEX</p>
                         </div>
-                        <div className="flex items-center">
-                          <Users className="w-6 h-6 text-blue-400 mr-3" />
-                          <div>
-                            <h4 className="text-white font-semibold text-sm">Project Governance</h4>
-                            <p className="text-gray-400 text-xs">Vote on proposals</p>
+                        <div className="flex items-start">
+                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 mt-0.5">
+                            4
                           </div>
+                          <p className="text-gray-300 text-sm">Swap SOL for $SIDE</p>
                         </div>
                       </div>
+                      <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 rounded-lg mt-4">
+                        <Wallet className="w-4 h-4 mr-2" />
+                        Buy $SIDE
+                      </Button>
                     </CardContent>
                   </Card>
                 </div>
+              </div>
+
+              {/* Feature Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Card className="bg-gray-800/60 border-green-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                      <DollarSign className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-white font-semibold mb-2">Dividends from $10M</h3>
+                    <p className="text-gray-400 text-sm">Automatic dividend payments from institute profits</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800/60 border-blue-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                      <Shield className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-white font-semibold mb-2">Security</h3>
+                    <p className="text-gray-400 text-sm">Audited smart contract on Solana</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                      <TrendingUp className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-white font-semibold mb-2">Value Growth</h3>
+                    <p className="text-gray-400 text-sm">Deflationary model with burn mechanism</p>
+                  </CardContent>
+                </Card>
               </div>
             </TabsContent>
 
             {/* Rewards Tab */}
             <TabsContent value="rewards" className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {investmentTiers.map((tier, index) => (
-                  <Card key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-900/95 border-gray-600/30 hover:scale-105 transition-transform duration-300 rounded-2xl">
+                  <Card key={index} className="bg-gray-800/60 border-gray-700/50 rounded-xl backdrop-blur-sm hover:border-purple-500/30 transition-colors">
                     <CardContent className="p-6">
-                      <div className={`w-12 h-12 bg-gradient-to-r ${tier.color} rounded-xl flex items-center justify-center text-white mb-4`}>
-                        {React.cloneElement(tier.icon, { className: "w-6 h-6" })}
+                      <div className="flex items-center mb-4">
+                        <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-violet-700 rounded-lg flex items-center justify-center text-white mr-3">
+                          <Star className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <h3 className="text-white font-semibold">{tier.name} Tier</h3>
+                          <p className="text-purple-300 font-medium text-sm">{tier.min}</p>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-bold text-white mb-2">{tier.name} Tier</h3>
-                      <p className="text-purple-300 font-semibold mb-4">{tier.min}</p>
                       <ul className="space-y-2">
                         {tier.benefits.map((benefit, idx) => (
                           <li key={idx} className="flex items-start text-sm">
@@ -353,97 +302,118 @@ const TokenSection = () => {
             {/* Security Tab */}
             <TabsContent value="security" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {securityFeatures.map((feature, index) => (
-                  <Card key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-900/95 border-green-500/30 rounded-2xl">
-                    <CardContent className="p-6 text-center">
-                      <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
-                        {feature.icon}
-                      </div>
-                      <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                      <p className="text-gray-300 text-sm">{feature.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+                <Card className="bg-gray-800/60 border-green-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                      <Shield className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-white font-semibold mb-2">CertiK Audit</h3>
+                    <p className="text-gray-300 text-sm">Complete security verification</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800/60 border-green-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                      <Lock className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-white font-semibold mb-2">Multisig Treasury</h3>
+                    <p className="text-gray-300 text-sm">Protected fund management</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800/60 border-green-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                      <Banknote className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-white font-semibold mb-2">Locked Liquidity</h3>
+                    <p className="text-gray-300 text-sm">Guaranteed stability</p>
+                  </CardContent>
+                </Card>
               </div>
-              
-              <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-green-500/30 rounded-2xl">
-                <CardContent className="p-8">
-                  <div className="text-center">
-                    <Shield className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-white mb-4">100% Security</h3>
-                    <p className="text-gray-300 max-w-2xl mx-auto">
-                      Our smart contract has passed a complete security audit by CertiK. 
-                      All funds are protected by a multisig wallet, and liquidity is locked forever.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
             </TabsContent>
 
             {/* Community Tab */}
             <TabsContent value="community" className="space-y-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-                {communityStats.map((stat, index) => (
-                  <Card key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-900/95 border-purple-500/30 rounded-2xl">
-                    <CardContent className="p-6 text-center">
-                      <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
-                        {stat.icon}
-                      </div>
-                      <p className="text-2xl font-bold text-white mb-1">{stat.value}</p>
-                      <p className="text-gray-400 text-sm">{stat.label}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
+                      <Users className="w-5 h-5" />
+                    </div>
+                    <p className="text-xl font-bold text-white mb-1">2,847</p>
+                    <p className="text-gray-400 text-sm">Holders</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
+                      <BarChart3 className="w-5 h-5" />
+                    </div>
+                    <p className="text-xl font-bold text-white mb-1">$1.2M</p>
+                    <p className="text-gray-400 text-sm">Total Volume</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
+                      <Activity className="w-5 h-5" />
+                    </div>
+                    <p className="text-xl font-bold text-white mb-1">$45K</p>
+                    <p className="text-gray-400 text-sm">Daily Volume</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800/60 border-purple-500/30 rounded-xl backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mx-auto mb-3">
+                      <Flame className="w-5 h-5" />
+                    </div>
+                    <p className="text-xl font-bold text-white mb-1">12,450</p>
+                    <p className="text-gray-400 text-sm">Tokens Burned</p>
+                  </CardContent>
+                </Card>
               </div>
 
-              <Card className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-purple-500/30 rounded-2xl">
-                <CardContent className="p-8">
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-white mb-4">Join the Community</h3>
-                    <p className="text-gray-300 max-w-2xl mx-auto">
-                      Become part of an innovative community of investors and blockchain technology researchers. 
-                      Get exclusive updates and participate in ecosystem development.
-                    </p>
-                  </div>
-                  
-                  <div className="flex flex-wrap justify-center gap-4">
-                    <Button variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-500/20 rounded-xl">
-                      <Twitter className="w-4 h-4 mr-2" />
-                      Twitter
-                    </Button>
-                    <Button variant="outline" className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-500/20 rounded-xl">
-                      <MessageCircle className="w-4 h-4 mr-2" />
-                      Telegram  
-                    </Button>
-                    <Button variant="outline" className="border-gray-400/50 text-gray-300 hover:bg-gray-500/20 rounded-xl">
-                      <Github className="w-4 h-4 mr-2" />
-                      GitHub
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="flex justify-center gap-4 pt-6">
+                <Button variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-500/20 rounded-lg">
+                  <Twitter className="w-4 h-4 mr-2" />
+                  Twitter
+                </Button>
+                <Button variant="outline" className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-500/20 rounded-lg">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Telegram  
+                </Button>
+                <Button variant="outline" className="border-gray-400/50 text-gray-300 hover:bg-gray-500/20 rounded-lg">
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
+              </div>
             </TabsContent>
           </Tabs>
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-purple-900/80 via-violet-900/80 to-purple-900/80 p-8 rounded-3xl border border-purple-500/30 backdrop-blur-sm max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-4">
+        <div className="text-center mt-12">
+          <div className="bg-gradient-to-r from-purple-900/60 via-violet-900/60 to-purple-900/60 p-6 rounded-2xl border border-purple-500/30 backdrop-blur-sm max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-white mb-3">
               Start earning <span className="bg-gradient-to-r from-purple-300 to-violet-400 bg-clip-text text-transparent">today</span>
             </h2>
-            <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-200 mb-6">
               Don't miss the opportunity to earn passive income from blockchain economy development
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white px-8 rounded-xl">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white px-6 rounded-lg">
                 Buy $SIDE Tokens
-                <ArrowUpRight className="ml-2 h-5 w-5" />
+                <ArrowUpRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-300 hover:bg-purple-600/30 rounded-xl">
+              <Button variant="outline" size="lg" className="border-purple-400/50 text-purple-300 hover:bg-purple-600/30 rounded-lg">
                 View on DexScreener
-                <ExternalLink className="w-5 h-5 ml-2" />
+                <ExternalLink className="w-4 h-4 ml-2" />
               </Button>
             </div>
           </div>
