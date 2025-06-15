@@ -29,144 +29,132 @@ import {
   Code2,
   Network,
   Lock,
-  LineChart
+  LineChart,
+  Sparkles,
+  Bot,
+  CircuitBoard,
+  Layers,
+  Infinity,
+  Eye,
+  Play
 } from 'lucide-react';
-import { PieChart, Pie, Cell, ResponsiveContainer, LineChart as RechartsLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, AreaChart, Area } from 'recharts';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 const About = () => {
-  const [activeSection, setActiveSection] = useState(0);
+  const [activeAI, setActiveAI] = useState(0);
   const [counter, setCounter] = useState(0);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [animatedCounter, setAnimatedCounter] = useState(0);
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveSection(prev => (prev + 1) % 4);
+      setActiveAI(prev => (prev + 1) % 3);
       setCounter(prev => prev + 1);
-      setAnimatedCounter(prev => prev + 1);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
-  const keyFeatures = [
+  const platformHighlights = [
     {
-      icon: <Rocket className="w-8 h-8" />,
-      title: "Blockchain Transformation",
-      description: "Revolutionary integration of traditional financial systems with next-generation blockchain technology.",
-      progress: 95,
-      color: "from-purple-500 to-violet-600",
-      metrics: ["50+ Enterprises", "95% Success Rate"]
+      icon: <Bot className="w-8 h-8" />,
+      title: "AI-Powered Research",
+      description: "Революционные алгоритмы машинного обучения для анализа блокчейн экономики",
+      value: "1000+",
+      metric: "AI Models",
+      color: "from-blue-500 via-cyan-500 to-teal-500",
+      bgColor: "from-blue-500/10 to-teal-500/20"
     },
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: "AI-Powered Research", 
-      description: "Advanced machine learning algorithms analyzing market trends and blockchain economics patterns.",
-      progress: 88,
-      color: "from-blue-500 to-cyan-600",
-      metrics: ["1000+ Data Points", "Real-time Analysis"]
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Venture Fund",
+      description: "Подготовка блокчейн компаний к IPO и стратегическим поглощениям",
+      value: "$5M",
+      metric: "Target Fund",
+      color: "from-emerald-500 via-green-500 to-teal-500",
+      bgColor: "from-emerald-500/10 to-teal-500/20"
     },
     {
-      icon: <Building className="w-8 h-8" />,
-      title: "Enterprise Solutions",
-      description: "Custom blockchain implementation strategies for Fortune 500 companies and institutions.",
-      progress: 92,
-      color: "from-emerald-500 to-teal-600",
-      metrics: ["25+ Partnerships", "Global Reach"]
+      icon: <BookOpen className="w-8 h-8" />,
+      title: "Master Education",
+      description: "Эксклюзивная программа сертификации для будущих лидеров индустрии",
+      value: "10K+",
+      metric: "Graduates",
+      color: "from-purple-500 via-violet-500 to-fuchsia-500",
+      bgColor: "from-purple-500/10 to-fuchsia-500/20"
+    }
+  ];
+
+  const aiFeatures = [
+    {
+      title: "Predictive Analytics",
+      description: "ИИ прогнозирует движения рынка с точностью 94%",
+      icon: <Brain className="w-6 h-6" />,
+      active: activeAI === 0
     },
     {
-      icon: <Crown className="w-8 h-8" />,
-      title: "Premium Education",
-      description: "Exclusive certification programs creating the next generation of blockchain leaders.",
-      progress: 78,
-      color: "from-orange-500 to-red-600",
-      metrics: ["10K+ Graduates", "Industry Recognition"]
+      title: "Smart Contracts Analysis",
+      description: "Автоматический аудит безопасности смарт-контрактов",
+      icon: <Shield className="w-6 h-6" />,
+      active: activeAI === 1
+    },
+    {
+      title: "Market Intelligence",
+      description: "Реальное время анализа институциональных потоков",
+      icon: <Activity className="w-6 h-6" />,
+      active: activeAI === 2
+    }
+  ];
+
+  const services = [
+    {
+      category: "Venture Investments",
+      title: "Pre-IPO Companies",
+      description: "Инвестируем в блокчейн компании на поздних стадиях развития, готовя их к публичному размещению",
+      metrics: ["$120M+ Portfolio", "95% Success Rate", "25+ Companies"],
+      icon: <Building className="w-12 h-12" />,
+      color: "from-green-400 to-emerald-600",
+      bgGradient: "from-green-500/20 to-emerald-500/30"
+    },
+    {
+      category: "AI Research",
+      title: "Breakthrough Analytics",
+      description: "Разрабатываем революционные ИИ алгоритмы для анализа криптовалютных рынков и DeFi протоколов",
+      metrics: ["500+ Research Papers", "50+ AI Models", "Global Recognition"],
+      icon: <Bot className="w-12 h-12" />,
+      color: "from-blue-400 to-cyan-600",
+      bgGradient: "from-blue-500/20 to-cyan-500/30"
+    },
+    {
+      category: "Premium Education",
+      title: "Master Certification",
+      description: "Эксклюзивная программа подготовки экспертов цифровой экономики с доступом к закрытым исследованиям",
+      metrics: ["$50K+ Average Salary", "100% Job Placement", "Elite Network"],
+      icon: <Crown className="w-12 h-12" />,
+      color: "from-purple-400 to-violet-600",
+      bgGradient: "from-purple-500/20 to-violet-500/30"
+    },
+    {
+      category: "Exclusive Research",
+      title: "Alpha Intelligence",
+      description: "Доступ к инсайдерской аналитике, торговым стратегиям и эксклюзивным прогнозам рынка",
+      metrics: ["$100K+ Value", "2K+ Subscribers", "Premium Access"],
+      icon: <Eye className="w-12 h-12" />,
+      color: "from-orange-400 to-red-600",
+      bgGradient: "from-orange-500/20 to-red-500/30"
     }
   ];
 
   const achievements = [
-    { 
-      icon: <Award className="w-12 h-12" />, 
-      value: "250+", 
-      label: "Breakthrough Projects",
-      color: "from-yellow-400 to-orange-500"
-    },
-    { 
-      icon: <Users className="w-12 h-12" />, 
-      value: "75K+", 
-      label: "Global Community",
-      color: "from-blue-400 to-purple-500" 
-    },
-    { 
-      icon: <DollarSign className="w-12 h-12" />, 
-      value: "$100M+", 
-      label: "Economic Impact",
-      color: "from-green-400 to-emerald-500"
-    },
-    { 
-      icon: <Target className="w-12 h-12" />, 
-      value: "98%", 
-      label: "Client Satisfaction",
-      color: "from-purple-400 to-pink-500"
-    }
-  ];
-
-  const innovationAreas = [
-    {
-      title: "DeFi Revolution",
-      description: "Pioneering decentralized finance protocols",
-      icon: <Coins className="w-6 h-6" />,
-      investment: "$25M",
-      projects: 45,
-      color: "from-green-500 to-emerald-600",
-      trend: "+45%"
-    },
-    {
-      title: "Smart Contracts 3.0",
-      description: "Next-generation automated agreements",
-      icon: <Code2 className="w-6 h-6" />,
-      investment: "$18M",
-      projects: 32,
-      color: "from-blue-500 to-cyan-600",
-      trend: "+38%"
-    },
-    {
-      title: "Cross-Chain Infrastructure", 
-      description: "Seamless blockchain interoperability",
-      icon: <Network className="w-6 h-6" />,
-      investment: "$30M",
-      projects: 28,
-      color: "from-purple-500 to-violet-600",
-      trend: "+52%"
-    },
-    {
-      title: "Quantum Security",
-      description: "Future-proof cryptographic solutions",
-      icon: <Shield className="w-6 h-6" />,
-      investment: "$22M",
-      projects: 18,
-      color: "from-orange-500 to-red-600",
-      trend: "+29%"
-    }
-  ];
-
-  const timelineData = [
-    { year: "2020", value: 25, projects: 5 },
-    { year: "2021", value: 45, projects: 12 },
-    { year: "2022", value: 75, projects: 28 },
-    { year: "2023", value: 120, projects: 45 },
-    { year: "2024", value: 180, projects: 68 }
-  ];
-
-  const impactData = [
-    { name: 'Traditional Finance', value: 35, color: '#8B5CF6' },
-    { name: 'DeFi Protocols', value: 30, color: '#A855F7' },
-    { name: 'Enterprise Solutions', value: 20, color: '#C084FC' },
-    { name: 'Research & Education', value: 15, color: '#E879F9' }
+    { number: "250+", text: "Breakthrough Projects", icon: <Rocket className="w-6 h-6" /> },
+    { number: "75K+", text: "Global Community", icon: <Users className="w-6 h-6" /> },
+    { number: "$100M+", text: "Economic Impact", icon: <DollarSign className="w-6 h-6" /> },
+    { number: "98%", text: "Client Success", icon: <Target className="w-6 h-6" /> }
   ];
 
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative overflow-hidden">
-      {/* Dynamic Background */}
+      {/* Enhanced Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-violet-600/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
@@ -175,252 +163,221 @@ const About = () => {
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Compact Hero Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600/20 to-violet-600/20 rounded-full text-purple-200 text-sm font-medium mb-6 border border-purple-500/30 backdrop-blur-sm">
-            <Brain className="w-4 h-4 mr-2" />
-            Pioneering Blockchain Research
+        {/* Revolutionary Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600/30 to-violet-600/30 rounded-full text-purple-200 text-sm font-medium mb-8 border border-purple-500/50 backdrop-blur-sm">
+            <Sparkles className="w-5 h-5 mr-2" />
+            Revolutionary Research Platform
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Pioneering
             <span className="bg-gradient-to-r from-purple-300 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              Transforming
-            </span>{" "}
-            <span className="text-white">Digital Economics</span>
+              {' '}Blockchain
+            </span>
+            <br />
+            <span className="text-white">Research</span>
           </h1>
           
-          <p className="text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-            SIDE is the world's leading <span className="font-bold text-purple-300">blockchain economics institute</span>, 
-            bridging traditional finance with revolutionary DeFi protocols.
+          <p className="text-xl text-gray-200 max-w-4xl mx-auto mb-12 leading-relaxed">
+            Access groundbreaking research that shapes the future of digital economics. 
+            From public insights to exclusive intelligence for program participants.
           </p>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <Button 
+              size="lg" 
+              className="relative overflow-hidden bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 hover:from-purple-700 hover:via-violet-700 hover:to-fuchsia-700 text-white font-bold px-10 py-6 shadow-2xl border-0 group transition-all duration-300 hover:scale-105 rounded-2xl text-lg"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Play className="w-5 h-5 mr-3 group-hover:translate-x-1 transition-transform" />
+              Start Learning
+              <ArrowUpRight className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
+            </Button>
+            
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-2 border-purple-400/60 bg-white/10 text-white hover:bg-purple-500/20 hover:border-purple-300 font-bold px-10 py-6 backdrop-blur-sm group transition-all duration-300 hover:scale-105 rounded-2xl text-lg shadow-xl"
+            >
+              <Eye className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
+              View Research
+            </Button>
+          </div>
         </div>
 
-        {/* Interactive Achievement Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {achievements.map((achievement, index) => (
-            <div 
-              key={index} 
-              className={`relative group cursor-pointer ${activeSection === index ? 'scale-105' : ''} transition-all duration-500`}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-r ${achievement.color} rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
-              <div className="relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-600/30 rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-                <div className={`w-16 h-16 bg-gradient-to-r ${achievement.color} rounded-xl flex items-center justify-center text-white mx-auto mb-4 shadow-xl ${hoveredCard === index ? 'animate-bounce' : ''}`}>
-                  {achievement.icon}
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">{achievement.value}</div>
-                <div className="text-gray-300 text-sm">{achievement.label}</div>
-                {hoveredCard === index && (
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
-                    <CheckCircle className="w-4 h-4 text-white" />
+        {/* Platform Highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {platformHighlights.map((highlight, index) => (
+            <div key={index} className="group relative">
+              <div className={`absolute inset-0 bg-gradient-to-br ${highlight.bgColor} rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-60 group-hover:opacity-80`}></div>
+              <div className="relative bg-gradient-to-br from-gray-800/95 via-gray-700/90 to-gray-800/95 p-8 rounded-3xl border border-gray-600/40 hover:shadow-2xl transition-all duration-300 group-hover:scale-105 backdrop-blur-sm hover:border-purple-500/50 text-center">
+                <div className="relative mb-6">
+                  <div className={`absolute inset-0 bg-gradient-to-r ${highlight.color} rounded-2xl blur-lg opacity-60 group-hover:opacity-80 transition-opacity duration-300`}></div>
+                  <div className={`relative w-16 h-16 bg-gradient-to-r ${highlight.color} rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2`}>
+                    <div className="text-white">
+                      {highlight.icon}
+                    </div>
                   </div>
-                )}
+                </div>
+                
+                <div className="text-3xl font-bold text-white mb-2">{highlight.value}</div>
+                <div className="text-sm text-purple-300 font-semibold mb-4 uppercase tracking-wide">{highlight.metric}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{highlight.title}</h3>
+                <p className="text-gray-200 text-sm leading-relaxed">{highlight.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Enhanced Key Features Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <div className="space-y-6">
-            {keyFeatures.map((feature, index) => (
-              <div key={index} className="group relative">
-                <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-300`}></div>
-                <div className="relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 hover:scale-[1.02] transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-lg flex items-center justify-center text-white shadow-xl flex-shrink-0`}>
-                      {feature.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                      <p className="text-gray-200 mb-3 text-sm leading-relaxed">{feature.description}</p>
-                      
-                      <div className="flex space-x-3 mb-3">
-                        {feature.metrics.map((metric, idx) => (
-                          <span key={idx} className="px-2 py-1 bg-purple-600/20 text-purple-300 rounded-md text-xs font-medium">
-                            {metric}
-                          </span>
-                        ))}
-                      </div>
-                      
-                      <div className="w-full bg-gray-700 rounded-full h-2">
-                        <div 
-                          className={`bg-gradient-to-r ${feature.color} h-2 rounded-full transition-all duration-1000 ease-out shadow-lg`}
-                          style={{ width: `${feature.progress}%` }}
-                        ></div>
-                      </div>
-                      <div className="text-right text-xs text-purple-300 mt-1 font-medium">{feature.progress}%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Charts Section */}
-          <div className="space-y-6">
-            {/* Growth Chart */}
-            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                <LineChart className="w-6 h-6 mr-2 text-purple-400" />
-                Growth Trajectory
-              </h3>
-              <div className="h-48">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={timelineData}>
-                    <defs>
-                      <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#8B5CF6" stopOpacity={0.8}/>
-                        <stop offset="95%" stopColor="#8B5CF6" stopOpacity={0.1}/>
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                    <XAxis dataKey="year" stroke="#9CA3AF" />
-                    <YAxis stroke="#9CA3AF" />
-                    <Tooltip 
-                      contentStyle={{ 
-                        backgroundColor: '#374151', 
-                        border: '1px solid #6B7280',
-                        borderRadius: '8px',
-                        color: '#F3F4F6'
-                      }} 
-                    />
-                    <Area 
-                      type="monotone" 
-                      dataKey="value" 
-                      stroke="#8B5CF6" 
-                      fillOpacity={1} 
-                      fill="url(#colorValue)" 
-                      strokeWidth={2}
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-
-            {/* Impact Distribution */}
-            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                <BarChart3 className="w-6 h-6 mr-2 text-violet-400" />
-                Impact Distribution
-              </h3>
-              <div className="h-48">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={impactData}
-                      cx="50%"
-                      cy="50%"
-                      outerRadius={60}
-                      fill="#8884d8"
-                      dataKey="value"
-                      label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                    >
-                      {impactData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                    <Tooltip 
-                      contentStyle={{ 
-                        backgroundColor: '#374151', 
-                        border: '1px solid #6B7280',
-                        borderRadius: '8px',
-                        color: '#F3F4F6'
-                      }} 
-                    />
-                  </PieChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Innovation Areas with Trends */}
-        <div className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Innovation <span className="bg-gradient-to-r from-purple-300 to-violet-400 bg-clip-text text-transparent">Ecosystem</span>
+        {/* AI Features Showcase */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              AI-Powered <span className="bg-gradient-to-r from-blue-300 to-cyan-400 bg-clip-text text-transparent">Intelligence</span>
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Leading breakthrough developments across multiple blockchain sectors
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              Наши ИИ алгоритмы анализируют блокчейн экосистему в реальном времени
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {innovationAreas.map((area, index) => (
-              <div key={index} className="group relative">
-                <div className={`absolute inset-0 bg-gradient-to-r ${area.color} rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
-                <div className="relative bg-gradient-to-br from-gray-800/95 to-gray-900/95 border border-gray-600/30 rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 h-full">
-                  <div className="absolute top-3 right-3">
-                    <span className="text-green-400 text-xs font-bold">{area.trend}</span>
-                  </div>
-                  <div className={`w-12 h-12 bg-gradient-to-r ${area.color} rounded-xl flex items-center justify-center text-white mx-auto mb-4 shadow-xl`}>
-                    {area.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{area.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{area.description}</p>
-                  
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-400 text-xs">Investment</span>
-                      <span className="text-green-400 font-bold text-sm">{area.investment}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-400 text-xs">Projects</span>
-                      <span className="text-purple-400 font-bold text-sm">{area.projects}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {aiFeatures.map((feature, index) => (
+              <div key={index} className={`relative group transition-all duration-500 ${feature.active ? 'scale-105' : ''}`}>
+                <div className={`absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl blur-lg transition-all duration-500 ${feature.active ? 'opacity-60 scale-110' : 'opacity-20'}`}></div>
+                <div className={`relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 p-6 rounded-2xl border transition-all duration-500 ${feature.active ? 'border-blue-500/50 bg-gradient-to-br from-blue-900/20 to-cyan-900/20' : 'border-gray-700/50'}`}>
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-500 ${feature.active ? 'bg-gradient-to-r from-blue-500 to-cyan-600 scale-110' : 'bg-gray-700'}`}>
+                    <div className="text-white">
+                      {feature.icon}
                     </div>
                   </div>
+                  <h3 className={`text-lg font-bold mb-2 transition-colors duration-500 ${feature.active ? 'text-blue-300' : 'text-white'}`}>{feature.title}</h3>
+                  <p className="text-gray-300 text-sm">{feature.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Compact Mission Statement */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-violet-600/20 to-fuchsia-600/10 rounded-2xl blur-2xl"></div>
+        {/* Services Grid */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Our <span className="bg-gradient-to-r from-purple-300 to-violet-400 bg-clip-text text-transparent">Ecosystem</span>
+            </h2>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              Полная экосистема для успеха в цифровой экономике будущего
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <div 
+                key={index} 
+                className="group relative"
+                onMouseEnter={() => setHoveredService(index)}
+                onMouseLeave={() => setHoveredService(null)}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 ${hoveredService === index ? 'opacity-60 scale-105' : 'opacity-30'}`}></div>
+                <Card className="relative group-hover:scale-[1.02] transition-all duration-500 border-0 bg-gradient-to-br from-gray-800/90 via-gray-700/80 to-gray-800/90 border border-gray-600/40 hover:border-purple-500/50 rounded-3xl overflow-hidden backdrop-blur-sm h-full">
+                  <CardContent className="p-8">
+                    <div className="flex items-start space-x-6">
+                      <div className={`relative flex-shrink-0 transition-all duration-500 ${hoveredService === index ? 'scale-110' : ''}`}>
+                        <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-lg opacity-50 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                        <div className={`relative w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-white shadow-xl`}>
+                          {service.icon}
+                        </div>
+                      </div>
+                      
+                      <div className="flex-1">
+                        <Badge className="bg-purple-600/20 text-purple-300 border-purple-500/30 mb-3 text-xs">
+                          {service.category}
+                        </Badge>
+                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-200 mb-6 leading-relaxed">
+                          {service.description}
+                        </p>
+                        
+                        <div className="grid grid-cols-3 gap-4">
+                          {service.metrics.map((metric, idx) => (
+                            <div key={idx} className="text-center">
+                              <div className="text-sm font-bold text-emerald-400">{metric.split(' ')[0]}</div>
+                              <div className="text-xs text-gray-400">{metric.split(' ').slice(1).join(' ')}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Achievement Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+          {achievements.map((achievement, index) => (
+            <div key={index} className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-violet-700 rounded-2xl flex items-center justify-center text-white mx-auto mb-4 shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                {achievement.icon}
+              </div>
+              <div className="text-3xl font-bold text-white mb-2">{achievement.number}</div>
+              <div className="text-gray-300 text-sm">{achievement.text}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Final CTA */}
+        <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-slate-800/95 via-gray-800/90 to-slate-900/95 border border-purple-500/30 shadow-2xl backdrop-blur-sm">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-violet-600/10 to-cyan-600/20"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-500/20 via-violet-500/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-cyan-500/20 via-violet-500/10 to-transparent rounded-full blur-3xl"></div>
           
-          <div className="relative bg-gradient-to-br from-gray-800/90 via-gray-700/80 to-gray-800/90 backdrop-blur-xl rounded-2xl p-10 border border-purple-500/30 shadow-xl">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-600 to-violet-700 rounded-2xl mb-6 shadow-xl">
-                <Rocket className="w-8 h-8 text-white" />
+          <div className="relative p-12 md:p-16 text-center">
+            <div className="flex justify-center space-x-4 mb-8">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-violet-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Brain className="w-6 h-6 text-white" />
               </div>
-              
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Our <span className="bg-gradient-to-r from-purple-300 to-violet-300 bg-clip-text text-transparent">Vision</span>
-              </h2>
-              
-              <p className="text-xl text-gray-200 leading-relaxed mb-8">
-                To create a world where blockchain technology seamlessly integrates with traditional economics, 
-                enabling unprecedented transparency, efficiency, and innovation in global financial systems.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-violet-500/30 rounded-xl mb-3 flex items-center justify-center">
-                    <Globe className="w-6 h-6 text-purple-300" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Global Impact</h3>
-                  <p className="text-gray-300 text-center text-sm">Transforming economies worldwide</p>
-                </div>
-                
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-violet-500/30 rounded-xl mb-3 flex items-center justify-center">
-                    <BookOpen className="w-6 h-6 text-purple-300" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Education First</h3>
-                  <p className="text-gray-300 text-center text-sm">Building digital economy expertise</p>
-                </div>
-                
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-violet-500/30 rounded-xl mb-3 flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-purple-300" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Innovation Drive</h3>
-                  <p className="text-gray-300 text-center text-sm">Pushing digital finance boundaries</p>
-                </div>
+              <div className="w-12 h-12 bg-gradient-to-r from-violet-500 to-fuchsia-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Rocket className="w-6 h-6 text-white" />
               </div>
+              <div className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Crown className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            
+            <h3 className="text-4xl font-bold text-white mb-6 leading-tight">
+              Ready to Join the Future?
+              <span className="block text-2xl font-normal text-purple-200 mt-2">Become Part of the Digital Economy Revolution</span>
+            </h3>
+            <p className="text-lg text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Получите доступ к эксклюзивным исследованиям, инвестиционным возможностям 
+              и образовательным программам от лидеров блокчейн индустрии.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button 
+                size="lg" 
+                className="relative overflow-hidden bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 hover:from-purple-700 hover:via-violet-700 hover:to-fuchsia-700 text-white font-bold px-10 py-6 shadow-2xl border-0 group transition-all duration-300 hover:scale-105 rounded-2xl text-lg"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Sparkles className="w-5 h-5 mr-3 group-hover:translate-x-1 transition-transform" />
+                Join Our Platform
+                <ArrowUpRight className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-purple-400/60 bg-white/10 text-white hover:bg-purple-500/20 hover:border-purple-300 font-bold px-10 py-6 backdrop-blur-sm group transition-all duration-300 hover:scale-105 rounded-2xl text-lg shadow-xl"
+              >
+                <Calendar className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
+                Schedule Demo
+              </Button>
             </div>
           </div>
         </div>
