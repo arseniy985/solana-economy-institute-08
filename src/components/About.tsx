@@ -93,48 +93,45 @@ const About = () => {
     { label: "Global Reach", value: "50+", suffix: "Countries", icon: <Globe className="w-6 h-6" /> }
   ];
 
-  const institutionalAchievements = [
+  const pillarsOfSuccess = [
     {
-      category: "Investment Excellence",
       title: "Premier Blockchain Fund",
+      subtitle: "Investment Excellence",
       description: "Built the most successful blockchain-focused venture fund in Eastern Europe",
+      icon: <Briefcase className="w-8 h-8" />,
+      gradient: "from-emerald-500 to-green-600",
       achievements: [
-        "Raised $150M in Series A funding",
-        "85+ portfolio companies with avg 500% growth",
-        "15 unicorn companies created",
-        "300% average ROI across all investments"
-      ],
-      icon: <Briefcase className="w-12 h-12" />,
-      gradient: "from-emerald-600 to-green-500",
-      accentColor: "emerald"
+        { text: "Raised $150M in Series A funding", icon: <DollarSign className="w-4 h-4" /> },
+        { text: "85+ portfolio companies with avg 500% growth", icon: <TrendingUp className="w-4 h-4" /> },
+        { text: "15 unicorn companies created", icon: <Crown className="w-4 h-4" /> },
+        { text: "300% average ROI across all investments", icon: <BarChart3 className="w-4 h-4" /> }
+      ]
     },
     {
-      category: "Education Leadership",
       title: "Elite Training Institute",
+      subtitle: "Education Leadership",
       description: "Created the world's most comprehensive blockchain education program",
+      icon: <Medal className="w-8 h-8" />,
+      gradient: "from-blue-500 to-cyan-600",
       achievements: [
-        "12,000+ certified blockchain professionals",
-        "95% job placement rate in tier-1 companies",
-        "Partnership with 200+ leading corporations",
-        "Alumni working at Google, Microsoft, Binance"
-      ],
-      icon: <Medal className="w-12 h-12" />,
-      gradient: "from-blue-600 to-cyan-500",
-      accentColor: "blue"
+        { text: "12,000+ certified blockchain professionals", icon: <Users className="w-4 h-4" /> },
+        { text: "95% job placement rate in tier-1 companies", icon: <Target className="w-4 h-4" /> },
+        { text: "Partnership with 200+ leading corporations", icon: <Building className="w-4 h-4" /> },
+        { text: "Alumni working at Google, Microsoft, Binance", icon: <Star className="w-4 h-4" /> }
+      ]
     },
     {
-      category: "Research Innovation",
       title: "Academic Excellence",
+      subtitle: "Research Innovation",
       description: "Leading global research in blockchain technology and digital economics",
+      icon: <BookOpen className="w-8 h-8" />,
+      gradient: "from-purple-500 to-violet-600",
       achievements: [
-        "200+ peer-reviewed research papers",
-        "50,000+ academic citations",
-        "5 breakthrough patents in blockchain tech",
-        "Collaboration with Stanford, MIT, Harvard"
-      ],
-      icon: <BookOpen className="w-12 h-12" />,
-      gradient: "from-purple-600 to-violet-500",
-      accentColor: "purple"
+        { text: "200+ peer-reviewed research papers", icon: <FileText className="w-4 h-4" /> },
+        { text: "50,000+ academic citations", icon: <Award className="w-4 h-4" /> },
+        { text: "5 breakthrough patents in blockchain tech", icon: <Zap className="w-4 h-4" /> },
+        { text: "Collaboration with Stanford, MIT, Harvard", icon: <GraduationCap className="w-4 h-4" /> }
+      ]
     }
   ];
 
@@ -197,61 +194,55 @@ const About = () => {
           </div>
         </div>
 
-        {/* Institutional Achievements */}
+        {/* Redesigned Pillars of Success */}
         <div className="mb-24">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Our <span className="bg-gradient-to-r from-emerald-300 to-cyan-400 bg-clip-text text-transparent">Institutional Excellence</span>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Three Pillars of Success That Define Our
+              <span className="block bg-gradient-to-r from-emerald-300 to-cyan-400 bg-clip-text text-transparent">
+                Leadership in the Digital Economy
+              </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Three pillars of success that define our leadership in the digital economy
-            </p>
           </div>
 
-          <div className="space-y-8">
-            {institutionalAchievements.map((achievement, index) => (
-              <div key={index} className="group">
-                <div className="relative">
-                  <div className={`absolute inset-0 bg-gradient-to-r from-${achievement.accentColor}-500/20 to-${achievement.accentColor}-600/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-60 group-hover:opacity-80`}></div>
-                  
-                  <Card className="relative group-hover:scale-[1.01] transition-all duration-500 border-0 bg-gradient-to-br from-slate-800/95 via-slate-700/90 to-slate-800/95 rounded-3xl overflow-hidden backdrop-blur-sm shadow-2xl">
-                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${achievement.gradient}`}></div>
-                    
-                    <CardContent className="p-10">
-                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                        <div className="lg:col-span-1">
-                          <div className="flex items-center space-x-4 mb-6">
-                            <div className={`w-16 h-16 bg-gradient-to-r ${achievement.gradient} rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                              <div className="text-white">
-                                {achievement.icon}
-                              </div>
-                            </div>
-                            <Badge className={`bg-${achievement.accentColor}-500/20 text-${achievement.accentColor}-300 border-${achievement.accentColor}-500/30`}>
-                              {achievement.category}
-                            </Badge>
-                          </div>
-                          
-                          <h3 className="text-2xl font-bold text-white mb-4">
-                            {achievement.title}
-                          </h3>
-                          <p className="text-gray-300 leading-relaxed">
-                            {achievement.description}
-                          </p>
-                        </div>
-                        
-                        <div className="lg:col-span-2">
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {achievement.achievements.map((item, idx) => (
-                              <div key={idx} className="flex items-center space-x-3 p-4 bg-slate-800/50 rounded-xl">
-                                <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${achievement.gradient} flex-shrink-0`}></div>
-                                <span className="text-gray-200 text-sm font-medium">{item}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {pillarsOfSuccess.map((pillar, index) => (
+              <div key={index} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-700/20 to-slate-800/40 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                
+                <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/90 p-8 rounded-3xl border border-slate-700/50 backdrop-blur-sm group-hover:border-emerald-500/30 transition-all duration-500 h-full">
+                  {/* Header */}
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className={`w-14 h-14 bg-gradient-to-r ${pillar.gradient} rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                      <div className="text-white">
+                        {pillar.icon}
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                    <div>
+                      <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 mb-2">
+                        {pillar.subtitle}
+                      </Badge>
+                      <h3 className="text-xl font-bold text-white">{pillar.title}</h3>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    {pillar.description}
+                  </p>
+                  
+                  {/* Achievements Grid */}
+                  <div className="space-y-3">
+                    {pillar.achievements.map((achievement, idx) => (
+                      <div key={idx} className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-xl group-hover:bg-slate-700/50 transition-all duration-300">
+                        <div className={`w-8 h-8 bg-gradient-to-r ${pillar.gradient} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                          <div className="text-white text-sm">
+                            {achievement.icon}
+                          </div>
+                        </div>
+                        <span className="text-gray-200 text-sm font-medium">{achievement.text}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
