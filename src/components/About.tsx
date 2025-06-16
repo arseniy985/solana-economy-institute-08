@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   TrendingUp, 
@@ -145,7 +144,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 relative overflow-hidden">
+    <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 relative overflow-hidden">
       {/* Enhanced Background */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-emerald-600/30 to-green-600/20 rounded-full blur-3xl animate-pulse"></div>
@@ -155,39 +154,39 @@ const About = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Hero Achievement Banner */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-800/60 via-green-800/40 to-emerald-800/60 rounded-full text-emerald-300 text-sm font-semibold mb-8 border border-emerald-500/30 backdrop-blur-sm shadow-2xl">
-            <Trophy className="w-5 h-5 mr-3 animate-bounce" />
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-800/60 via-green-800/40 to-emerald-800/60 rounded-full text-emerald-300 text-sm font-semibold mb-6 border border-emerald-500/30 backdrop-blur-sm shadow-2xl">
+            <Trophy className="w-4 h-4 mr-2 animate-bounce" />
             Industry Leading Achievements
-            <Sparkles className="w-5 h-5 ml-3 animate-pulse" />
+            <Sparkles className="w-4 h-4 ml-2 animate-pulse" />
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-            <span className="block text-white">Transforming</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight px-4">
+            <span className="block text-white mb-2">Transforming</span>
             <span className="block bg-gradient-to-r from-emerald-300 via-green-400 to-cyan-400 bg-clip-text text-transparent">
               Digital Economics
             </span>
           </h1>
           
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto mb-10 leading-relaxed px-4">
             Pioneering the future through <span className="text-emerald-400 font-semibold">exceptional achievements</span> in 
             venture capital, elite education, and groundbreaking research. 
             <span className="text-cyan-400 font-medium"> Our track record speaks for itself.</span>
           </p>
 
           {/* Major Achievement Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {majorAchievements.map((achievement, index) => (
               <div key={index} className="group relative">
                 <div className={`absolute inset-0 ${achievement.bgGlow} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 ${activeAchievement === index ? 'opacity-70 scale-110' : 'opacity-40'}`}></div>
-                <div className={`relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 p-6 rounded-2xl border transition-all duration-500 ${activeAchievement === index ? 'border-emerald-500/50 scale-105' : 'border-slate-700/50'} backdrop-blur-sm`}>
-                  <div className={`w-12 h-12 bg-gradient-to-r ${achievement.gradient} rounded-xl flex items-center justify-center mb-4 mx-auto transition-all duration-500 ${activeAchievement === index ? 'scale-110 rotate-12' : ''}`}>
+                <div className={`relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 p-4 sm:p-6 rounded-2xl border transition-all duration-500 ${activeAchievement === index ? 'border-emerald-500/50 scale-105' : 'border-slate-700/50'} backdrop-blur-sm`}>
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${achievement.gradient} rounded-xl flex items-center justify-center mb-3 mx-auto transition-all duration-500 ${activeAchievement === index ? 'scale-110 rotate-12' : ''}`}>
                     <div className="text-white">
                       {achievement.icon}
                     </div>
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2">{achievement.value}</div>
-                  <div className="text-gray-400 text-sm">{achievement.description}</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">{achievement.value}</div>
+                  <div className="text-gray-400 text-xs sm:text-sm">{achievement.description}</div>
                 </div>
               </div>
             ))}
