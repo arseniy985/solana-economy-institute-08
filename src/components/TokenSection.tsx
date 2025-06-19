@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -107,28 +106,28 @@ const TokenSection = () => {
         <div className="max-w-5xl mx-auto mb-10">
           <Tabs defaultValue="overview" className="w-full">
             <div className="flex justify-center mb-8">
-              <TabsList className="grid grid-cols-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-1">
+              <TabsList className="grid w-full max-w-md grid-cols-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-1 h-12">
                 <TabsTrigger 
                   value="overview" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 text-sm font-medium"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-4 py-2 text-sm font-medium h-10 flex items-center justify-center"
                 >
                   Overview
                 </TabsTrigger>
                 <TabsTrigger 
                   value="rewards" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 text-sm font-medium"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-4 py-2 text-sm font-medium h-10 flex items-center justify-center"
                 >
                   Rewards
                 </TabsTrigger>
                 <TabsTrigger 
                   value="security" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 text-sm font-medium"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-4 py-2 text-sm font-medium h-10 flex items-center justify-center"
                 >
                   Security
                 </TabsTrigger>
                 <TabsTrigger 
                   value="community" 
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-6 py-3 text-sm font-medium"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-violet-700 data-[state=active]:text-white rounded-xl px-4 py-2 text-sm font-medium h-10 flex items-center justify-center"
                 >
                   Community
                 </TabsTrigger>
@@ -137,6 +136,7 @@ const TokenSection = () => {
 
             {/* Overview Tab */}
             <TabsContent value="overview" className="space-y-6">
+              
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Token Information - Top Left */}
                 <Card className="bg-gray-800/80 border-gray-600/30 rounded-2xl backdrop-blur-sm">
@@ -260,7 +260,7 @@ const TokenSection = () => {
               </div>
             </TabsContent>
 
-            {/* Rewards Tab */}
+            
             <TabsContent value="rewards" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {investmentTiers.map((tier, index) => (
@@ -289,7 +289,6 @@ const TokenSection = () => {
               </div>
             </TabsContent>
 
-            {/* Security Tab */}
             <TabsContent value="security" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <Card className="bg-gray-800/80 border-green-500/30 rounded-2xl backdrop-blur-sm">
@@ -324,7 +323,6 @@ const TokenSection = () => {
               </div>
             </TabsContent>
 
-            {/* Community Tab */}
             <TabsContent value="community" className="space-y-6">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                 <Card className="bg-gray-800/80 border-purple-500/30 rounded-2xl backdrop-blur-sm">
