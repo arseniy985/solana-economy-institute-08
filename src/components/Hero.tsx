@@ -31,7 +31,7 @@ const Hero = () => {
                 & Development
               </span>
               <span className="block bg-gradient-to-r from-purple-300 via-violet-400 to-pink-400 bg-clip-text text-transparent">
-                Excellence
+                Entertainment
               </span>
             </h1>
             
