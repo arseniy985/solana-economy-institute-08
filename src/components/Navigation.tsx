@@ -28,9 +28,11 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-violet-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">S</span>
-            </div>
+            <img 
+              src="/lovable-uploads/38c7bb81-42e5-4be7-9177-8f17c128376a.png" 
+              alt="SIDE Logo" 
+              className="h-10 w-auto"
+            />
             <div>
               <h1 className="text-xl font-bold text-white">SIDE</h1>
               <p className="text-xs text-gray-300">Digital Economy Institute</p>
