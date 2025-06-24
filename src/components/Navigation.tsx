@@ -34,7 +34,7 @@ const Navigation = () => {
               className="h-10 w-auto"
             />
             <div>
-              <h1 className="text-xl font-bold text-white">SIDE</h1>
+              <h1 className="text-xl font-bold text-white">SIDE Finance</h1>
               <p className="text-xs text-gray-300">Digital Economy Institute</p>
             </div>
           </div>

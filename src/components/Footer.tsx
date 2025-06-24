@@ -38,11 +38,13 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-violet-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
+              <img 
+                src="/lovable-uploads/38c7bb81-42e5-4be7-9177-8f17c128376a.png" 
+                alt="SIDE Logo" 
+                className="h-10 w-auto"
+              />
               <div>
-                <h1 className="text-xl font-bold">SIDE</h1>
+                <h1 className="text-xl font-bold">SIDE Finance</h1>
                 <p className="text-sm text-gray-400">Digital Economy Institute</p>
               </div>
             </div>
@@ -87,7 +89,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-gray-400">
-            © 2024 SOLANA Digital Economy Institute. All rights reserved.
+            © 2024 SIDE Finance Digital Economy Institute. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm text-gray-400">
             <a href="#" className="hover:text-purple-400 transition-colors">Privacy Policy</a>
