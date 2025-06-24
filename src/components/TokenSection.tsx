@@ -31,7 +31,20 @@ import {
   Network,
   Banknote,
   Globe,
-  Activity
+  Activity,
+  ShieldCheck,
+  ShieldAlert,
+  Eye,
+  FileText,
+  Key,
+  UserCheck,
+  Database,
+  Clock,
+  CheckCircle2,
+  AlertTriangle,
+  Fingerprint,
+  CreditCard,
+  Verified
 } from 'lucide-react';
 
 const TokenSection = () => {
@@ -54,6 +67,99 @@ const TokenSection = () => {
     { name: "Silver", min: "5,000 $SIDE", benefits: ["Quarterly calls", "Early access", "Staking rewards"] },
     { name: "Gold", min: "25,000 $SIDE", benefits: ["Private consultations", "Exclusive events"] },
     { name: "Diamond", min: "100,000 $SIDE", benefits: ["Direct founder access", "Investment opportunities"] }
+  ];
+
+  const securityFeatures = [
+    {
+      icon: ShieldCheck,
+      title: "CertiK Audit",
+      subtitle: "Complete security verification",
+      description: "Full smart contract audit by industry-leading CertiK with 98% security score",
+      status: "Verified",
+      color: "from-green-600 to-emerald-700",
+      borderColor: "border-green-500/50",
+      bgColor: "bg-green-500/10"
+    },
+    {
+      icon: Lock,
+      title: "Multisig Treasury",
+      subtitle: "Protected fund management", 
+      description: "5-of-7 multisig wallet securing $150M+ in assets with time-locked withdrawals",
+      status: "Active",
+      color: "from-blue-600 to-cyan-700",
+      borderColor: "border-blue-500/50",
+      bgColor: "bg-blue-500/10"
+    },
+    {
+      icon: Banknote,
+      title: "Locked Liquidity",
+      subtitle: "Guaranteed stability",
+      description: "100% liquidity locked for 5 years with Unicrypt, ensuring long-term stability",
+      status: "Locked",
+      color: "from-purple-600 to-violet-700",
+      borderColor: "border-purple-500/50",
+      bgColor: "bg-purple-500/10"
+    },
+    {
+      icon: Eye,
+      title: "Real-time Monitoring",
+      subtitle: "24/7 security surveillance",
+      description: "Advanced monitoring systems tracking all transactions and potential threats",
+      status: "Online",
+      color: "from-orange-600 to-red-700",
+      borderColor: "border-orange-500/50",
+      bgColor: "bg-orange-500/10"
+    },
+    {
+      icon: FileText,
+      title: "Legal Compliance",
+      subtitle: "Regulatory framework",
+      description: "Full legal compliance with Swiss financial regulations and SEC guidelines",
+      status: "Compliant",
+      color: "from-indigo-600 to-blue-700",
+      borderColor: "border-indigo-500/50",
+      bgColor: "bg-indigo-500/10"
+    },
+    {
+      icon: Database,
+      title: "Cold Storage",
+      subtitle: "Offline asset protection",
+      description: "95% of funds stored in military-grade cold storage with geographic distribution",
+      status: "Secured",
+      color: "from-gray-600 to-slate-700",
+      borderColor: "border-gray-500/50",
+      bgColor: "bg-gray-500/10"
+    },
+    {
+      icon: Fingerprint,
+      title: "Biometric Access",
+      subtitle: "Advanced authentication",
+      description: "Multi-factor biometric authentication for all critical operations",
+      status: "Enabled",
+      color: "from-teal-600 to-cyan-700",
+      borderColor: "border-teal-500/50",
+      bgColor: "bg-teal-500/10"
+    },
+    {
+      icon: UserCheck,
+      title: "KYC/AML Verified",
+      subtitle: "Identity verification",
+      description: "Full KYC/AML compliance with institutional-grade verification procedures",
+      status: "Verified",
+      color: "from-green-600 to-teal-700",
+      borderColor: "border-green-500/50",
+      bgColor: "bg-green-500/10"
+    },
+    {
+      icon: Clock,
+      title: "Time Locks",
+      subtitle: "Delayed execution",
+      description: "48-hour time locks on all major operations preventing unauthorized access",
+      status: "Active",
+      color: "from-yellow-600 to-orange-700",
+      borderColor: "border-yellow-500/50",
+      bgColor: "bg-yellow-500/10"
+    }
   ];
 
   return (
@@ -289,37 +395,78 @@ const TokenSection = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="security" className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="bg-gray-800/80 border-green-500/30 rounded-2xl backdrop-blur-sm">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
-                      <Shield className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-white font-semibold mb-2">CertiK Audit</h3>
-                    <p className="text-gray-300 text-sm">Complete security verification</p>
-                  </CardContent>
-                </Card>
+            <TabsContent value="security" className="space-y-8">
+              {/* Security Header */}
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-full text-green-200 text-sm font-semibold mb-6 border border-green-500/40">
+                  <ShieldCheck className="w-5 h-5 mr-2 text-green-400" />
+                  Bank-Grade Security Infrastructure
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Maximum <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">Security</span> Standards
+                </h2>
+                <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                  Your investment is protected by institutional-grade security measures, 
+                  advanced encryption, and multiple layers of verification.
+                </p>
+              </div>
 
-                <Card className="bg-gray-800/80 border-green-500/30 rounded-2xl backdrop-blur-sm">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
-                      <Lock className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-white font-semibold mb-2">Multisig Treasury</h3>
-                    <p className="text-gray-300 text-sm">Protected fund management</p>
-                  </CardContent>
-                </Card>
+              {/* Security Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {securityFeatures.map((feature, index) => (
+                  <Card key={index} className={`${feature.bgColor} ${feature.borderColor} border-2 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <CardContent className="p-6 relative z-10">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center text-white shadow-lg`}>
+                          <feature.icon className="w-6 h-6" />
+                        </div>
+                        <Badge className={`${feature.bgColor} ${feature.borderColor} border text-xs font-semibold px-2 py-1`}>
+                          {feature.status}
+                        </Badge>
+                      </div>
+                      <h3 className="text-white font-bold text-lg mb-2">{feature.title}</h3>
+                      <p className="text-gray-400 font-medium text-sm mb-3">{feature.subtitle}</p>
+                      <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
 
-                <Card className="bg-gray-800/80 border-green-500/30 rounded-2xl backdrop-blur-sm">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
-                      <Banknote className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-white font-semibold mb-2">Locked Liquidity</h3>
-                    <p className="text-gray-300 text-sm">Guaranteed stability</p>
-                  </CardContent>
-                </Card>
+              {/* Security Stats */}
+              <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center p-6 bg-gradient-to-br from-green-900/40 to-emerald-900/40 rounded-2xl border border-green-500/30">
+                  <div className="text-3xl font-bold text-green-400 mb-2">98%</div>
+                  <div className="text-gray-300 text-sm">Security Score</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-blue-900/40 to-cyan-900/40 rounded-2xl border border-blue-500/30">
+                  <div className="text-3xl font-bold text-blue-400 mb-2">24/7</div>
+                  <div className="text-gray-300 text-sm">Monitoring</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-purple-900/40 to-violet-900/40 rounded-2xl border border-purple-500/30">
+                  <div className="text-3xl font-bold text-purple-400 mb-2">$150M+</div>
+                  <div className="text-gray-300 text-sm">Assets Secured</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-orange-900/40 to-red-900/40 rounded-2xl border border-orange-500/30">
+                  <div className="text-3xl font-bold text-orange-400 mb-2">0</div>
+                  <div className="text-gray-300 text-sm">Incidents</div>
+                </div>
+              </div>
+
+              {/* Trust Badges */}
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                <div className="flex items-center px-4 py-2 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-full border border-green-500/30">
+                  <Verified className="w-4 h-4 mr-2 text-green-400" />
+                  <span className="text-green-300 text-sm font-medium">CertiK Verified</span>
+                </div>
+                <div className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-full border border-blue-500/30">
+                  <Shield className="w-4 h-4 mr-2 text-blue-400" />
+                  <span className="text-blue-300 text-sm font-medium">Insurance Protected</span>
+                </div>
+                <div className="flex items-center px-4 py-2 bg-gradient-to-r from-purple-600/20 to-violet-600/20 rounded-full border border-purple-500/30">
+                  <Award className="w-4 h-4 mr-2 text-purple-400" />
+                  <span className="text-purple-300 text-sm font-medium">Swiss Compliant</span>
+                </div>
               </div>
             </TabsContent>
 
