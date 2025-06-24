@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import TokenOverview from './TokenOverview';
 import { 
   Copy, 
   Check, 
@@ -248,238 +249,9 @@ const TokenSection = () => {
               </TabsList>
             </div>
 
-            {/* Overview Tab */}
-            <TabsContent value="overview" className="space-y-8">
-              
-              {/* Main Value Proposition Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                {/* Dividend Rewards */}
-                <Card className="bg-gradient-to-br from-emerald-900/40 to-green-900/40 border-2 border-emerald-500/50 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-green-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardContent className="p-6 relative z-10">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center text-white shadow-xl">
-                        <DollarSign className="w-8 h-8" />
-                      </div>
-                      <Badge className="bg-emerald-500/20 border-emerald-500/50 text-emerald-300 text-xs font-bold px-3 py-1">
-                        GUARANTEED
-                      </Badge>
-                    </div>
-                    <h3 className="text-white font-bold text-xl mb-2">Automatic Dividends</h3>
-                    <p className="text-emerald-300 font-bold text-lg mb-3">From $10M Market Cap</p>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">Monthly dividend distributions from institute profits directly to your wallet</p>
-                    <div className="flex items-center text-emerald-400 text-sm font-medium">
-                      <Percent className="w-4 h-4 mr-2" />
-                      Up to 15% APY Expected
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Staking Rewards */}
-                <Card className="bg-gradient-to-br from-purple-900/40 to-violet-900/40 border-2 border-purple-500/50 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-400/10 to-violet-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardContent className="p-6 relative z-10">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center text-white shadow-xl">
-                        <Zap className="w-8 h-8" />
-                      </div>
-                      <Badge className="bg-purple-500/20 border-purple-500/50 text-purple-300 text-xs font-bold px-3 py-1">
-                        ACTIVE
-                      </Badge>
-                    </div>
-                    <h3 className="text-white font-bold text-xl mb-2">Staking Protocol</h3>
-                    <p className="text-purple-300 font-bold text-lg mb-3">Earn While Holding</p>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">Lock tokens for additional rewards and governance voting power</p>
-                    <div className="flex items-center text-purple-400 text-sm font-medium">
-                      <Timer className="w-4 h-4 mr-2" />
-                      25% Bonus APY for Stakers
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Deflationary Model */}
-                <Card className="bg-gradient-to-br from-orange-900/40 to-red-900/40 border-2 border-orange-500/50 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-red-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardContent className="p-6 relative z-10">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white shadow-xl">
-                        <Flame className="w-8 h-8" />
-                      </div>
-                      <Badge className="bg-orange-500/20 border-orange-500/50 text-orange-300 text-xs font-bold px-3 py-1">
-                        BURNING
-                      </Badge>
-                    </div>
-                    <h3 className="text-white font-bold text-xl mb-2">Token Burns</h3>
-                    <p className="text-orange-300 font-bold text-lg mb-3">Decreasing Supply</p>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">Quarterly token burns reduce total supply, increasing scarcity and value</p>
-                    <div className="flex items-center text-orange-400 text-sm font-medium">
-                      <TrendingDown className="w-4 h-4 mr-2" />
-                      2% Supply Burned Quarterly
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Token Information Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-cyan-500/30 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <BarChart3 className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-cyan-400 mb-1">1M</div>
-                  <div className="text-gray-400 text-sm">Total Supply</div>
-                </div>
-
-                <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-purple-500/30 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-violet-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <Network className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-purple-400 mb-1">Solana</div>
-                  <div className="text-gray-400 text-sm">Blockchain</div>
-                </div>
-
-                <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-green-500/30 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <Gift className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-green-400 mb-1">$10M</div>
-                  <div className="text-gray-400 text-sm">Dividend Start</div>
-                </div>
-
-                <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-yellow-500/30 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <Shield className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-yellow-400 mb-1">98%</div>
-                  <div className="text-gray-400 text-sm">Security Score</div>
-                </div>
-              </div>
-
-              {/* Key Benefits */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* Investment Growth */}
-                <Card className="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 border border-blue-500/30 rounded-2xl backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                        <TrendingUp className="w-7 h-7 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-bold text-lg">Proven Growth Model</h3>
-                        <p className="text-blue-300 font-medium">300% Average ROI Track Record</p>
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex items-center text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
-                        <span className="text-gray-300">$150M+ in managed assets</span>
-                      </div>
-                      <div className="flex items-center text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
-                        <span className="text-gray-300">15 unicorn companies funded</span>
-                      </div>
-                      <div className="flex items-center text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
-                        <span className="text-gray-300">6-year consistent profitability</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Elite Community */}
-                <Card className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border border-indigo-500/30 rounded-2xl backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="w-14 h-14 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                        <Crown className="w-7 h-7 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-bold text-lg">Elite Community</h3>
-                        <p className="text-indigo-300 font-medium">Exclusive Access & Benefits</p>
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex items-center text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
-                        <span className="text-gray-300">Private investor calls</span>
-                      </div>
-                      <div className="flex items-center text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
-                        <span className="text-gray-300">Early access to new ventures</span>
-                      </div>
-                      <div className="flex items-center text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
-                        <span className="text-gray-300">Governance voting rights</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* How to Buy Section */}
-              <Card className="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 border border-yellow-500/30 rounded-2xl backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                      <Lightbulb className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-bold text-xl">How to Buy $SIDE</h3>
-                      <p className="text-yellow-300 font-medium">Simple 4-step process</p>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div className="text-center p-4 bg-black/20 rounded-xl">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-lg font-bold mx-auto mb-3 shadow-lg">
-                        1
-                      </div>
-                      <div className="text-white font-semibold mb-1">Install Phantom</div>
-                      <div className="text-gray-400 text-sm">Download Solana wallet</div>
-                    </div>
-                    <div className="text-center p-4 bg-black/20 rounded-xl">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-lg font-bold mx-auto mb-3 shadow-lg">
-                        2
-                      </div>
-                      <div className="text-white font-semibold mb-1">Buy SOL</div>
-                      <div className="text-gray-400 text-sm">Purchase on exchange</div>
-                    </div>
-                    <div className="text-center p-4 bg-black/20 rounded-xl">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-lg font-bold mx-auto mb-3 shadow-lg">
-                        3
-                      </div>
-                      <div className="text-white font-semibold mb-1">Use Jupiter DEX</div>
-                      <div className="text-gray-400 text-sm">Connect wallet</div>
-                    </div>
-                    <div className="text-center p-4 bg-black/20 rounded-xl">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-violet-700 rounded-full flex items-center justify-center text-white text-lg font-bold mx-auto mb-3 shadow-lg">
-                        4
-                      </div>
-                      <div className="text-white font-semibold mb-1">Swap for $SIDE</div>
-                      <div className="text-gray-400 text-sm">Start earning</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Trust Indicators */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="flex items-center justify-center px-4 py-3 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-full border border-green-500/30">
-                  <Verified className="w-5 h-5 mr-2 text-green-400" />
-                  <span className="text-green-300 text-sm font-medium">CertiK Verified</span>
-                </div>
-                <div className="flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-full border border-blue-500/30">
-                  <Shield className="w-5 h-5 mr-2 text-blue-400" />
-                  <span className="text-blue-300 text-sm font-medium">Insured Assets</span>
-                </div>
-                <div className="flex items-center justify-center px-4 py-3 bg-gradient-to-r from-purple-600/20 to-violet-600/20 rounded-full border border-purple-500/30">
-                  <Award className="w-5 h-5 mr-2 text-purple-400" />
-                  <span className="text-purple-300 text-sm font-medium">Swiss Regulated</span>
-                </div>
-                <div className="flex items-center justify-center px-4 py-3 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 rounded-full border border-yellow-500/30">
-                  <Sparkles className="w-5 h-5 mr-2 text-yellow-400" />
-                  <span className="text-yellow-300 text-sm font-medium">Premium Tier</span>
-                </div>
-              </div>
+            {/* Overview Tab - Using New Component */}
+            <TabsContent value="overview">
+              <TokenOverview />
             </TabsContent>
 
             
@@ -512,7 +284,6 @@ const TokenSection = () => {
             </TabsContent>
 
             <TabsContent value="security" className="space-y-8">
-              {/* Security Header */}
               <div className="text-center mb-12">
                 <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-full text-green-200 text-sm font-semibold mb-6 border border-green-500/40">
                   <ShieldCheck className="w-5 h-5 mr-2 text-green-400" />
@@ -527,7 +298,6 @@ const TokenSection = () => {
                 </p>
               </div>
 
-              {/* Security Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {securityFeatures.map((feature, index) => (
                   <Card key={index} className={`${feature.bgColor} ${feature.borderColor} border-2 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group relative overflow-hidden`}>
@@ -549,7 +319,6 @@ const TokenSection = () => {
                 ))}
               </div>
 
-              {/* Security Stats */}
               <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center p-6 bg-gradient-to-br from-green-900/40 to-emerald-900/40 rounded-2xl border border-green-500/30">
                   <div className="text-3xl font-bold text-green-400 mb-2">98%</div>
@@ -569,7 +338,6 @@ const TokenSection = () => {
                 </div>
               </div>
 
-              {/* Trust Badges */}
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <div className="flex items-center px-4 py-2 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-full border border-green-500/30">
                   <Verified className="w-4 h-4 mr-2 text-green-400" />
